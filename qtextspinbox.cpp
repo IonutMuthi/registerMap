@@ -2,7 +2,6 @@
 
 QTextSpinBox::QTextSpinBox(QWidget *parent) : QSpinBox(parent)
 {
-
 }
 
 void QTextSpinBox::setValues(QList<QString> *acceptedValues)

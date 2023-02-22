@@ -12,6 +12,7 @@ public:
 	~RegisterMapTemplate();
 
 	QMap<uint32_t, RegisterModel *> *getRegisterList() const;
+	RegisterModel* getRegisterTemplate(uint32_t address);
 	void setRegisterList(QMap<uint32_t, RegisterModel *> *newRegisterList);
 	void searchForRegisters(QString searchParam);
 

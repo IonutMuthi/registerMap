@@ -1,7 +1,7 @@
 #include "mainwindow.hpp"
 #include "./ui_mainwindow.h"
 #include "xmlfilemanager.hpp"
-#include "registermapcontroller.hpp"
+#include "deviceregistermap.hpp"
 #include <qdebug.h>
 #include <iio.h>
 #include <qboxlayout.h>
@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	ctx = iio_create_context_from_uri("ip:192.168.2.1"); //("ip:127.0.0.1");
+	ctx = iio_create_context_from_uri("ip:192.168.2.1");//("ip:127.0.0.1");
 
 	if (!ctx) {
 	    qDebug() << "Connection Error: No device available/connected to your PC.";
@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	struct iio_device *dev = getIioDevice("ad9361-phy");
 
-	RegisterMapController *regMap = new RegisterMapController(dev,"/home/ubuntu/Documents/RegmapUiDemo/ad9361-phy.xml");
+	DeviceRegisterMap *regMap = new DeviceRegisterMap(dev,"/home/ubuntu/Documents/RegmapUiDemo/ad9361-phy.xml");
 	QVBoxLayout *layout  = new QVBoxLayout();
 	layout->addWidget(regMap);
 

@@ -1,5 +1,4 @@
 #include "registermaptable.hpp"
-#include "searchbarwidget.hpp"
 #include "verticalscrollarea.hpp"
 
 #include <QLineEdit>
@@ -15,10 +14,6 @@ RegisterMapTable::RegisterMapTable(QMap<uint32_t, RegisterModel *> *registerMode
 {
 	layout = new QVBoxLayout();
 	setLayout(layout);
-
-	searchBarWidget = new SearchBarWidget();
-
-	QObject::connect(searchBarWidget, &SearchBarWidget::requestSearch, this, &RegisterMapTable::requestSearch);
 
 	scrollArea = new VerticalScrollArea();
 	registerTableLayout = new QVBoxLayout();
@@ -38,7 +33,6 @@ RegisterMapTable::RegisterMapTable(QMap<uint32_t, RegisterModel *> *registerMode
 		registerTableLayout->addWidget(registerSimpleWidget);
 	}
 
-	layout->addWidget(searchBarWidget);
 	scrollArea->setWidget(registerTable);
 	layout->addWidget(scrollArea);
 }
@@ -60,10 +54,10 @@ void RegisterMapTable::valueUpdated(uint32_t address, uint32_t value)
 	}
 }
 
-void RegisterMapTable::showSearchResults(QList<uint32_t> searchResult)
+void RegisterMapTable::setFilters(QList<uint32_t> filters)
 {
 	hideAll();
-	foreach (uint32_t address, searchResult) {
+	foreach (uint32_t address, filters) {
 		registersMap->value(address)->show();
 	}
 }

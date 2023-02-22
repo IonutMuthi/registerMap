@@ -49,7 +49,7 @@
                          </base-DElement>
                          <object>{d51aad2c-2f41-4177-83b2-9b456db9a612}</object>
                          <name>BitFieldModel</name>
-                         <pos>x:-465;y:175</pos>
+                         <pos>x:-1010;y:250</pos>
                          <rect>x:-125;y:-100;w:250;h:200</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -71,7 +71,7 @@
                          </base-DElement>
                          <object>{706bb346-03ef-4af4-940b-c6dd27527cc0}</object>
                          <name>RegisterModel</name>
-                         <pos>x:-135;y:-75</pos>
+                         <pos>x:-595;y:235</pos>
                          <rect>x:-130;y:-75;w:260;h:150</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -93,7 +93,7 @@
                          </base-DElement>
                          <object>{bb6eeb04-87d1-4d6f-bc13-c9955a6cae17}</object>
                          <name>RegReadWrite</name>
-                         <pos>x:845;y:-340</pos>
+                         <pos>x:1190;y:425</pos>
                          <rect>x:-150;y:-70;w:300;h:140</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -115,7 +115,7 @@
                          </base-DElement>
                          <object>{69ab3cdd-4530-4be6-bf43-18b231fdd7be}</object>
                          <name>XmlFileManager</name>
-                         <pos>x:875;y:240</pos>
+                         <pos>x:1220;y:205</pos>
                          <rect>x:-185;y:-80;w:370;h:160</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -136,9 +136,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{4bf01346-4664-48f6-86a5-5c96bf78ba0f}</object>
-                         <name>BitFieldWidget</name>
-                         <pos>x:-590;y:-180</pos>
-                         <rect>x:-110;y:-55;w:220;h:110</rect>
+                         <name>BitFieldDetailedWidget</name>
+                         <pos>x:-1330;y:475</pos>
+                         <rect>x:-110;y:-60;w:220;h:120</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -159,7 +159,7 @@
                          </base-DElement>
                          <object>{3c653ec6-5e02-4f4c-9b09-69c50575aa9c}</object>
                          <name>BitFieldSimpleWidget</name>
-                         <pos>x:-430;y:-320</pos>
+                         <pos>x:-1315;y:25</pos>
                          <rect>x:-110;y:-45;w:220;h:90</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -181,30 +181,8 @@
                          </base-DElement>
                          <object>{262d0381-4142-4085-9cd6-f7a68fa5d8ca}</object>
                          <name>RegisterSimpleWidget</name>
-                         <pos>x:140;y:-320</pos>
+                         <pos>x:-325;y:15</pos>
                          <rect>x:-125;y:-60;w:250;h:120</rect>
-                         <auto-sized>false</auto-sized>
-                         <visual-role>0</visual-role>
-                        </DObject>
-                       </base-DObject>
-                       <show-all-members>true</show-all-members>
-                      </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DClass">
-                      <DClass>
-                       <base-DObject>
-                        <DObject>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{5509edad-b125-4e31-98af-6754cf435683}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{32c36b1e-7624-4e3b-9a1c-e1190570f320}</object>
-                         <name>RegisterWidget</name>
-                         <pos>x:170;y:160</pos>
-                         <rect>x:-140;y:-60;w:280;h:120</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -225,8 +203,8 @@
                          </base-DElement>
                          <object>{d72df1e7-6d02-4de7-a72e-79e1fbd9785c}</object>
                          <name>RegisterMapTemplate</name>
-                         <pos>x:835;y:55</pos>
-                         <rect>x:-130;y:-35;w:260;h:70</rect>
+                         <pos>x:820;y:205</pos>
+                         <rect>x:-195;y:-65;w:390;h:130</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -246,8 +224,8 @@
                          </base-DElement>
                          <object>{a4774960-649d-4f0c-92a5-20c684f70a24}</object>
                          <name>RegisterController</name>
-                         <pos>x:10;y:440</pos>
-                         <rect>x:-140;y:-85;w:280;h:170</rect>
+                         <pos>x:40;y:340</pos>
+                         <rect>x:-180;y:-90;w:360;h:180</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -268,8 +246,8 @@
                          </base-DElement>
                          <object>{e51be470-2b52-463d-af05-8c634133695a}</object>
                          <name>RegisterMapValues</name>
-                         <pos>x:845;y:-90</pos>
-                         <rect>x:-135;y:-60;w:270;h:120</rect>
+                         <pos>x:830;y:430</pos>
+                         <rect>x:-165;y:-70;w:330;h:140</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -291,7 +269,6 @@
                          <object>{90c13e14-2cad-4f43-8097-1c7aba430162}</object>
                          <a>{85989b87-dd99-4c12-9add-8b20c7560274}</a>
                          <b>{de72a963-def6-4f22-8451-aaf8d7f1bfb2}</b>
-                         <name>&gt; requestRead -&gt; $ read</name>
                         </DRelation>
                        </base-DRelation>
                       </DDependency>
@@ -322,147 +299,18 @@
                         <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{5db9430f-f1e9-447c-ae29-81bf4bb945d9}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{da12bc7d-b565-4267-81eb-aa0e6ff49554}</object>
-                         <name>RegisterDetailedWidgetBuilder</name>
-                         <pos>x:-135;y:100</pos>
-                         <rect>x:-90;y:-35;w:180;h:70</rect>
-                         <visual-role>0</visual-role>
-                        </DObject>
-                       </base-DObject>
-                       <show-all-members>true</show-all-members>
-                      </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{e78e1f08-3c1c-41c4-95c2-4c11a771b3c8}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{e5fe963d-52d8-47ca-884d-e1e6ba4ed1b4}</object>
-                         <a>{5db9430f-f1e9-447c-ae29-81bf4bb945d9}</a>
-                         <b>{b64008c5-6f05-4b95-8e37-665b061fb69b}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DInheritance">
-                      <DInheritance>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{7033bd73-03f9-4f5b-a54b-f2a96423054d}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{f294bc14-e784-4265-9267-e4c472d1c731}</object>
-                         <a>{5509edad-b125-4e31-98af-6754cf435683}</a>
-                         <b>{5db9430f-f1e9-447c-ae29-81bf4bb945d9}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DInheritance>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DClass">
-                      <DClass>
-                       <base-DObject>
-                        <DObject>
-                         <base-DElement>
-                          <DElement>
                            <uid>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</uid>
                           </DElement>
                          </base-DElement>
                          <object>{6dcb0af8-2c2c-4f5b-83f5-e962bdac87c2}</object>
-                         <name>BitFieldBuilder</name>
-                         <pos>x:-500;y:-10</pos>
-                         <rect>x:-105;y:-40;w:210;h:80</rect>
+                         <name>BitFieldSimpleWidgetFactory</name>
+                         <pos>x:-1010;y:25</pos>
+                         <rect>x:-85;y:-35;w:170;h:70</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
                        <show-all-members>true</show-all-members>
                       </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{55581851-1c68-4468-a9c7-0600b0d1c29f}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{949099ff-ec16-4188-bde3-19f283fd46e0}</object>
-                         <a>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</a>
-                         <b>{38fed991-4b3b-4928-b521-a4cbc8276b14}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DInheritance">
-                      <DInheritance>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{b4b08e6d-7047-4e2f-a60e-0ae731e145cc}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{52500c2a-ab18-47ee-82a3-40d38d10b543}</object>
-                         <a>{af3c9e00-2721-4999-a3ed-9f7c085ee689}</a>
-                         <b>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DInheritance>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DInheritance">
-                      <DInheritance>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{5efd4db4-9940-4696-b4fd-4dbfc0325ae6}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{c266bc20-62ff-47f2-b6e7-f5f4d8dcba60}</object>
-                         <a>{a7631f5d-74e4-4877-869f-3175e6a817f1}</a>
-                         <b>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DInheritance>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{21807286-1046-4f4d-9953-8ac22aae7eb7}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{b993b5a9-f87b-4de0-9886-070a3e30c644}</object>
-                         <a>{5db9430f-f1e9-447c-ae29-81bf4bb945d9}</a>
-                         <b>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
                      </instance>
                     </item>
                     <item>
@@ -476,9 +324,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{abaa1211-346e-4183-a465-6bb51e75e254}</object>
-                         <name>RegMapTable</name>
-                         <pos>x:420;y:-215</pos>
-                         <rect>x:-115;y:-45;w:230;h:90</rect>
+                         <name>RegisterMapTable</name>
+                         <pos>x:35;y:115</pos>
+                         <rect>x:-150;y:-85;w:300;h:170</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -497,68 +345,14 @@
                           </DElement>
                          </base-DElement>
                          <object>{74e40c0f-49e2-4f7d-906f-e5d9213e3df5}</object>
-                         <name>RegisterSimpleWidgetBuilder</name>
-                         <pos>x:-130;y:-235</pos>
+                         <name>RegisterSimpleWidgetFactory</name>
+                         <pos>x:-595;y:25</pos>
                          <rect>x:-85;y:-35;w:170;h:70</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
                        <show-all-members>true</show-all-members>
                       </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DInheritance">
-                      <DInheritance>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{a30b92a0-87ad-4fed-8e69-f5982ce62a57}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{39878cda-c3cd-4ca4-a787-166b253db831}</object>
-                         <a>{fd6f61fa-4912-4cc6-8d09-99bd845fae8a}</a>
-                         <b>{144a1691-d34d-4751-b23d-9de271777c56}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DInheritance>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{04aaeaf5-9e89-442f-b847-03f9aa5a85c7}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{f5bee75f-b1f4-4b13-a609-e93095131cdc}</object>
-                         <a>{144a1691-d34d-4751-b23d-9de271777c56}</a>
-                         <b>{b64008c5-6f05-4b95-8e37-665b061fb69b}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{7e7ae810-90a2-4b84-86f2-f7de295d7d24}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{5b487269-4670-47a1-af23-2abadf168fbc}</object>
-                         <a>{85989b87-dd99-4c12-9add-8b20c7560274}</a>
-                         <b>{75d8acc1-da91-436b-b34b-d2fc4023ae32}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
                      </instance>
                     </item>
                     <item>
@@ -586,13 +380,13 @@
                         <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{6ba8dc2a-227a-46a2-9948-fb224d3b8fa6}</uid>
+                           <uid>{3c797ad0-523c-4081-80a4-4f320c42d887}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{8db43c4c-5cda-4c03-b77c-b55a47b12412}</object>
-                         <name>DetailedRegisterView</name>
-                         <pos>x:390;y:0</pos>
-                         <rect>x:-65;y:-35;w:130;h:70</rect>
+                         <object>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</object>
+                         <name>BitFieldDetailedWidgetFactory</name>
+                         <pos>x:-1010;y:475</pos>
+                         <rect>x:-90;y:-35;w:180;h:70</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -607,12 +401,12 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{0daac7d4-2c46-4c41-aac0-cd728eb4d812}</uid>
+                           <uid>{176ee273-66c7-45bf-b45d-e57b6c2b81b4}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{e4402a3b-9543-448d-9183-ce4375852667}</object>
-                         <a>{85989b87-dd99-4c12-9add-8b20c7560274}</a>
-                         <b>{6ba8dc2a-227a-46a2-9948-fb224d3b8fa6}</b>
+                         <object>{ce1d8b37-7f0f-4a93-9056-aadd87aba119}</object>
+                         <a>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</a>
+                         <b>{38fed991-4b3b-4928-b521-a4cbc8276b14}</b>
                         </DRelation>
                        </base-DRelation>
                       </DDependency>
@@ -625,13 +419,292 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{87d227cb-e4f7-4908-a487-b6ce2c29c48f}</uid>
+                           <uid>{40679cfe-e062-445a-b673-0d8df7960eda}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{2d0052dd-35ac-4efe-bd86-2011c27cc488}</object>
-                         <a>{6ba8dc2a-227a-46a2-9948-fb224d3b8fa6}</a>
-                         <b>{5509edad-b125-4e31-98af-6754cf435683}</b>
-                         <name>readDone -&gt; updateValues</name>
+                         <object>{181d41f8-29d1-444a-a617-0c3eb6166a10}</object>
+                         <a>{3c797ad0-523c-4081-80a4-4f320c42d887}</a>
+                         <b>{38fed991-4b3b-4928-b521-a4cbc8276b14}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{84d20de6-f473-45a7-ba55-dbaa0841832b}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{06063d74-5e97-4313-99ef-4948e1def393}</object>
+                         <a>{3c797ad0-523c-4081-80a4-4f320c42d887}</a>
+                         <b>{a7631f5d-74e4-4877-869f-3175e6a817f1}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{4a70bbbd-2666-4684-9a2e-41eb10ba085f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{121a3a6a-ce44-4605-83cc-35b96400ec6b}</object>
+                         <a>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</a>
+                         <b>{af3c9e00-2721-4999-a3ed-9f7c085ee689}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{9a86cf8d-31d0-44fc-acae-fb90f27e747e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{da736f32-4cbd-427b-8a1d-b02908727d4b}</object>
+                         <a>{144a1691-d34d-4751-b23d-9de271777c56}</a>
+                         <b>{e3f95a1e-9253-4b28-9a2f-ac7417c8843f}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{be7a9b68-671d-4e6d-b968-b7177c229646}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{c21ae78e-efbd-4337-bc77-31997200de23}</object>
+                         <a>{144a1691-d34d-4751-b23d-9de271777c56}</a>
+                         <b>{b64008c5-6f05-4b95-8e37-665b061fb69b}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0bbf1322-cf86-4807-9889-dd75fd23fdef}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f7f138ca-56ef-4aa1-a1b3-bdd4698c627b}</object>
+                         <a>{fd6f61fa-4912-4cc6-8d09-99bd845fae8a}</a>
+                         <b>{144a1691-d34d-4751-b23d-9de271777c56}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{6fd16103-ce7f-4b5e-8554-eaa0019cf0c1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{0ff25b05-3e64-4d9c-8653-72b1cae1f656}</object>
+                         <a>{8575749d-c9ee-42f3-b271-04bf6dfa3925}</a>
+                         <b>{75d8acc1-da91-436b-b34b-d2fc4023ae32}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{a644c879-1de2-44f0-9d54-d8ce196f5359}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{1a2ca15c-c125-46c5-a5af-41f817d187af}</object>
+                         <name>SearchBarWidget</name>
+                         <pos>x:35;y:-75</pos>
+                         <rect>x:-110;y:-35;w:220;h:70</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3b2caa4e-2b61-4aea-8493-406e0749ff85}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b99a339e-afc3-46d4-8f8d-62034e12b7fb}</object>
+                         <a>{75d8acc1-da91-436b-b34b-d2fc4023ae32}</a>
+                         <b>{a644c879-1de2-44f0-9d54-d8ce196f5359}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{54420c04-360e-47c1-b213-b9b9093345d7}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</object>
+                         <name>BitFieldsDetailedWidget</name>
+                         <pos>x:-595;y:475</pos>
+                         <rect>x:-135;y:-60;w:270;h:120</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c8ea902e-7741-4164-81bb-6c920de48724}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{6b150cd8-1dfb-494c-a5f1-4a5e2ec3acda}</object>
+                         <a>{54420c04-360e-47c1-b213-b9b9093345d7}</a>
+                         <b>{3c797ad0-523c-4081-80a4-4f320c42d887}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{445264ff-7b46-4525-99bc-409f3a26431c}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</object>
+                         <name>RegisterMapController</name>
+                         <pos>x:430;y:345</pos>
+                         <rect>x:-125;y:-80;w:250;h:160</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{759f890c-a935-420a-b238-3d52c1181864}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{5bacf81a-2727-485a-a457-0dffdfdf4f7e}</object>
+                         <a>{445264ff-7b46-4525-99bc-409f3a26431c}</a>
+                         <b>{63d0eb8d-7c61-4a1d-ba26-5a0203e28d74}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{d5e672c9-8722-4c19-a846-beae0aac9479}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{3286e928-ef5f-43dd-94d2-29a3094298b2}</object>
+                         <a>{445264ff-7b46-4525-99bc-409f3a26431c}</a>
+                         <b>{85989b87-dd99-4c12-9add-8b20c7560274}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3daf6b00-789f-4a5f-b8a6-912aeef253e8}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d12805ae-ae47-4910-9802-7368c779962a}</object>
+                         <a>{445264ff-7b46-4525-99bc-409f3a26431c}</a>
+                         <b>{8575749d-c9ee-42f3-b271-04bf6dfa3925}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{841e8480-43e5-4398-9e09-c1bfecdf1652}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{0d1e1d27-8327-47f4-a34e-0282dc4fda12}</object>
+                         <a>{8575749d-c9ee-42f3-b271-04bf6dfa3925}</a>
+                         <b>{54420c04-360e-47c1-b213-b9b9093345d7}</b>
                         </DRelation>
                        </base-DRelation>
                       </DDependency>
@@ -639,7 +712,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1676459631266</last-modified>
+                  <last-modified>1676710868968</last-modified>
                   <toolbarid>Classes</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -720,21 +793,21 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{92e5c032-1ddd-4032-b7aa-d6dff20ed86f}</uid>
+                    <uid>{de0ab5cd-dfee-4819-81ff-4db1a2942232}</uid>
                     <type>2</type>
                     <declaration>QString getName()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a91491c5-96dd-4389-818a-e4104010eeb1}</uid>
+                    <uid>{89929c01-7871-4e31-932d-a2f125ae6a79}</uid>
                     <type>2</type>
                     <declaration>QString getAccess()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{26e68f76-ee4f-4841-9b36-8d502fc8c75c}</uid>
+                    <uid>{323c552c-3b3a-49fb-be12-fbb5bca35639}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getDefaultValue()</declaration>
@@ -742,7 +815,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c61f8bcc-87dc-468f-838b-7e151849e7cd}</uid>
+                    <uid>{413dc3de-de27-4d8f-b8de-d4397c0556bc}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getDescription()</declaration>
@@ -750,7 +823,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{25f6ba93-3741-4c3c-a762-7fbd18985b2f}</uid>
+                    <uid>{d210ebf9-840f-489b-8cdf-f9250c06a118}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getVisibility()</declaration>
@@ -758,7 +831,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a1e11abf-5b3d-4d2d-b1b2-5c08406247de}</uid>
+                    <uid>{19830428-393f-4aa5-8abe-2f6f5c33d79a}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getWidth()</declaration>
@@ -766,7 +839,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{588beb22-099d-4859-ab58-0386b7d6fa11}</uid>
+                    <uid>{5a31beb9-c979-4c89-9fb7-c4b6c371c1d4}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getNotes()</declaration>
@@ -774,7 +847,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c8b80934-19f6-49df-b104-67fc7bc1b9df}</uid>
+                    <uid>{8aa09538-0c44-4e52-bb6b-da61f7aec524}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getBitOffset()</declaration>
@@ -782,7 +855,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0facec02-d29e-4333-b655-560d16dadcc6}</uid>
+                    <uid>{104697bd-0317-4652-8eb5-359e242beff5}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getRegOffset()</declaration>
@@ -790,7 +863,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a2e436f4-6a9a-46b7-8a54-4e830eadd8f4}</uid>
+                    <uid>{bdfebc71-965e-4072-9fdd-5017009b49b0}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getSliceWidth()</declaration>
@@ -798,7 +871,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ac0746b7-00c3-43d2-bf9d-a35dacb34177}</uid>
+                    <uid>{18c5697e-a9fd-434e-93ac-84cca48fa814}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QMap&lt;QString, QString&gt;* getOptions()</declaration>
@@ -934,7 +1007,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{636be8ec-4de3-46fb-b3dd-9df008f9401b}</uid>
+                    <uid>{2e7731f0-4fcd-4bdc-9330-9f5b7510f0cd}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getName()</declaration>
@@ -942,7 +1015,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f304f5f5-fdf9-4e36-8568-576ea4c077d7}</uid>
+                    <uid>{94abcbd8-ae19-44ff-9c7f-d00a13b45a59}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getAddress()</declaration>
@@ -950,7 +1023,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cb12e954-ba27-42a0-b843-2a392e5fa289}</uid>
+                    <uid>{a820fa90-48ae-44f4-b93e-6d71a79ac952}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getDescription()</declaration>
@@ -958,7 +1031,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{583d2770-e38f-4eb9-ab79-7f1aafaa0889}</uid>
+                    <uid>{0f80665c-5e1e-41b6-a948-f80af9a699ad}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>bool getExists()</declaration>
@@ -966,7 +1039,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6be2fa05-eb5a-4915-8b0d-707b5c12a913}</uid>
+                    <uid>{4ab7299b-3791-4cd9-b098-735aeec3ca89}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getWidth()</declaration>
@@ -974,7 +1047,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{02d78c68-61b3-4828-a314-ebd281d74fb0}</uid>
+                    <uid>{dadfebdc-0999-4e8c-98c2-3de8afc4518e}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getNotes()</declaration>
@@ -982,7 +1055,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{19c65fc6-129d-47cf-951a-c1068d07e763}</uid>
+                    <uid>{0df1e5ab-c49b-471f-a60d-a9e60b14dcf2}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QVector&lt;BitFieldModel *&gt; *getBitFields()</declaration>
@@ -1015,7 +1088,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{2d2b5aa2-6791-4018-88bd-634377ccdca3}</uid>
+                    <uid>{bbad591f-b24f-46f9-85a4-63ef89c3436d}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void read(uint32_t address)</declaration>
@@ -1023,7 +1096,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f43f3c67-f2bb-4f8c-a7bd-41d89df748a3}</uid>
+                    <uid>{e00f0981-7b4b-4282-a4ce-4525cf12ae99}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void write(uint32_t address, uint32_t val)</declaration>
@@ -1031,7 +1104,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3fa2a23d-c553-41ae-9c71-3466ed47af30}</uid>
+                    <uid>{b3acaa23-25f7-41de-9105-884d0bcd8152}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>readDone(QPair&lt;uint32_t, const uint32_t&gt; value)</declaration>
@@ -1039,7 +1112,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d1d9c45e-ef27-4953-b2ba-3dbcfce163d9}</uid>
+                    <uid>{6d8deb3a-8f13-4f51-90d4-e9cb044f9862}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>readError(const char *err)</declaration>
@@ -1047,7 +1120,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f8b8c49a-e6b1-4c4b-88b4-7d74f0943280}</uid>
+                    <uid>{4fe9ee3d-f9e4-4be5-8624-4d04c1830d80}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>writeError(const char *err)</declaration>
@@ -1055,7 +1128,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{710700f5-b3b3-4f89-886c-39fcfbf9c3e7}</uid>
+                    <uid>{76bb4419-5170-4921-b770-71d5117a5445}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>writeSuccess()</declaration>
@@ -1088,56 +1161,56 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{e4836f9c-c6c4-4027-b9db-5e3788f85d56}</uid>
+                    <uid>{8e7686e4-26f0-4091-9991-1212c496a9bb}</uid>
                     <type>2</type>
                     <declaration>QList&lt;QString&gt;* getAllAddresses()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0212cd07-a245-432b-bd3e-8d4ebfc5ee61}</uid>
+                    <uid>{7bbc1fc1-f3e6-46dd-9d45-6267f7d5686f}</uid>
                     <type>2</type>
                     <declaration>QMap&lt;QString, RegisterModel*&gt; *getAllRegisters()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{44d96035-7602-423d-8910-32593d9a5432}</uid>
+                    <uid>{83c2f6dd-52ad-4c2b-b7e2-e7a3b554bc0e}</uid>
                     <type>2</type>
                     <declaration>RegisterModel* getRegAtAddress(QString addr)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{213c0ee6-d848-4d45-8207-cf883e16f0fd}</uid>
+                    <uid>{18b2590d-8c88-437b-8889-e1c8d3082368}</uid>
                     <type>2</type>
                     <declaration>RegisterModel* getRegister(QDomElement reg)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{940a698a-0538-4e77-843c-7952ba2a09ef}</uid>
+                    <uid>{47195717-5b88-4995-8dbb-45216ee4499d}</uid>
                     <type>2</type>
                     <declaration>void getRegMapData(QString addr)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6f18a95d-615d-4b2f-97b2-31a9f17b20e9}</uid>
+                    <uid>{a3350384-a8b2-4ad9-8931-94a111a31a2f}</uid>
                     <type>2</type>
                     <declaration>QVector&lt;BitFieldModel*&gt; *getBitFields(QString regAddr)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{896ff8d5-bbb1-4bda-ba34-234b86c37fe1}</uid>
+                    <uid>{d507cda5-4598-4a14-af1a-7e96de05f1a6}</uid>
                     <type>2</type>
                     <declaration>QVector&lt;BitFieldModel*&gt; *getBitFieldsOfRegister(QDomElement reg)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c3876726-6542-427c-a63d-e6d0d0d2b23e}</uid>
+                    <uid>{2d150ebd-d035-4a61-beca-9086c15ae84a}</uid>
                     <type>2</type>
                     <declaration>BitFieldModel *getBitField(QDomElement bitField)</declaration>
                    </MClassMember>
@@ -1162,7 +1235,7 @@
                     <uid>{4bf01346-4664-48f6-86a5-5c96bf78ba0f}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>BitFieldWidget</name>
+                  <name>BitFieldDetailedWidget</name>
                   <relations>
                    <handles>
                     <handles>
@@ -1199,7 +1272,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{580cba42-c7b6-4969-8592-2ec267c95b14}</uid>
+                    <uid>{3209a133-ec2e-4783-bec4-4ac758295287}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>QString getToolTip()</declaration>
@@ -1207,14 +1280,14 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5899e72a-47b6-4451-9a1f-15cc21fe16fb}</uid>
+                    <uid>{e7bfccfd-fd61-44ec-852f-e49cb29c03b3}</uid>
                     <type>2</type>
                     <declaration>QString getValue()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a5fa6d24-0c98-44a6-aca6-6131b03171d6}</uid>
+                    <uid>{3ba7b4cb-c95b-48ad-8926-ec32d9cb127d}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getWidth()</declaration>
@@ -1222,7 +1295,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d46dd1e0-63bb-4efd-9fe7-9782935408a7}</uid>
+                    <uid>{14557aa2-0da9-4a70-a287-8611893f6809}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void updateValue(QString newValue)</declaration>
@@ -1314,7 +1387,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{606fa2b4-f5f7-4004-9c15-29c1693f68dc}</uid>
+                    <uid>{de1a1c9b-2545-4ee9-b3b2-ef45655f92c4}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void updateValue(QString newValue)</declaration>
@@ -1322,7 +1395,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3710ae44-8cbb-48e8-93c8-df0ba0ac1468}</uid>
+                    <uid>{781a4971-e81b-43c9-a13c-2e579bb3f45d}</uid>
                     <type>2</type>
                     <properties>4</properties>
                     <declaration>int getWidth()</declaration>
@@ -1426,6 +1499,28 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{f7f138ca-56ef-4aa1-a1b3-bdd4698c627b}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{f7f138ca-56ef-4aa1-a1b3-bdd4698c627b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{262d0381-4142-4085-9cd6-f7a68fa5d8ca}</a>
+                             <b>{74e40c0f-49e2-4f7d-906f-e5d9213e3df5}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1436,7 +1531,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{ada6eac6-b72c-47cc-bf10-0c6c46bbeeaa}</uid>
+                    <uid>{3a617b2c-39a4-4985-98ee-c8c39d2da75d}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void valueUpdated(QString value)</declaration>
@@ -1444,18 +1539,10 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fba0010f-b7db-41e1-ab8d-7d110ecd2faa}</uid>
+                    <uid>{9f213c64-a280-4bd1-a898-2462d07dba3a}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>registrSelected(QString address)</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{b31d03ce-8b5c-40c7-8c91-8cced6d3943c}</uid>
-                    <type>2</type>
-                    <properties>256</properties>
-                    <declaration>requestRead(QString address)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1534,6 +1621,28 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{ba6ae1d4-8d69-46c7-bdac-0cfb2db1d6ea}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{ba6ae1d4-8d69-46c7-bdac-0cfb2db1d6ea}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{32c36b1e-7624-4e3b-9a1c-e1190570f320}</a>
+                             <b>{da12bc7d-b565-4267-81eb-aa0e6ff49554}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1544,14 +1653,14 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{ac60db56-ceae-4348-b928-25e2e8482d68}</uid>
+                    <uid>{06d67fea-4e3b-4627-a576-9dc56680e613}</uid>
                     <type>2</type>
                     <declaration>void updateValue()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{df6fea89-8e75-4659-ace0-1fe1d50a8202}</uid>
+                    <uid>{70d7007e-61b9-4299-939f-c85f1c31d682}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void updateBitFields(QString value)</declaration>
@@ -1559,7 +1668,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e5e7c5b3-16d3-4734-93c3-826fdf6dab23}</uid>
+                    <uid>{2fc7e980-00f3-499a-94ac-ab43bc667674}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void valueUpdated(QString value)</declaration>
@@ -1567,7 +1676,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b24cb00d-72c9-4a9c-a6af-2ccc9b0c1b1e}</uid>
+                    <uid>{4a22e91f-f3d1-4caa-a3e2-6e3197bd9660}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>void readReqested()</declaration>
@@ -1575,7 +1684,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5865ddd2-adf2-44db-97eb-a4af9ef807d7}</uid>
+                    <uid>{2d3c5bd4-6382-41fd-bba2-35db12290864}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>void writeRequested(String address, QString value)</declaration>
@@ -1733,7 +1842,39 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{38878d6c-6174-47d0-86c6-f1ed0f060cca}</uid>
+                    <uid>{e16af89c-09ea-4188-96db-018a62f7485b}</uid>
+                    <type>2</type>
+                    <properties>516</properties>
+                    <declaration>QMap&lt;uint32_t, RegisterModel *&gt; *getRegisterList()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{63307991-6945-4d07-a88c-e7e917807318}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void setRegisterList(QMap&lt;uint32_t, RegisterModel *&gt; *newRegisterList)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1caf7982-0177-4424-a3e6-448735f8616a}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void searchForRegisters(QString searchParam)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{78f2697d-ddf1-4750-9cf1-a5598cd10ef3}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>void searchDone(QList&lt;uint32_t&gt; searchResults)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{70b1f82c-7831-4e83-b4e9-c437cb415c85}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>QMap&lt;uint32_t, RegisterModel*&gt; *registerList</declaration>
@@ -1851,6 +1992,72 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{0ff25b05-3e64-4d9c-8653-72b1cae1f656}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{0ff25b05-3e64-4d9c-8653-72b1cae1f656}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{a4774960-649d-4f0c-92a5-20c684f70a24}</a>
+                             <b>{abaa1211-346e-4183-a465-6bb51e75e254}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{380e099e-fd97-4696-b78c-9bd2a293fc2e}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{380e099e-fd97-4696-b78c-9bd2a293fc2e}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{a4774960-649d-4f0c-92a5-20c684f70a24}</a>
+                             <b>{8db43c4c-5cda-4c03-b77c-b55a47b12412}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{0d1e1d27-8327-47f4-a34e-0282dc4fda12}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{0d1e1d27-8327-47f4-a34e-0282dc4fda12}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{a4774960-649d-4f0c-92a5-20c684f70a24}</a>
+                             <b>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1861,48 +2068,77 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{a5b97bfe-49b1-4929-8635-b8409d19cc53}</uid>
-                    <type>2</type>
-                    <declaration>RegisterSimpleWidget *getSimpleWidget()</declaration>
+                    <uid>{531156a9-637c-42bb-8840-ef05681ce1c2}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>BitFieldsDetailedWidget *bitFieldsDetailedWidget</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6691470b-33f4-4a4e-9de1-c32dbb3beb8d}</uid>
-                    <type>2</type>
-                    <declaration>RegisterWidget *getWidget()</declaration>
+                    <uid>{c66fe60a-e52c-40c8-ad69-4d0be0faa238}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>RegisterMapTable *registerMapTableWidget</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{30a3d469-8ef8-483e-8667-2e14cbce71b2}</uid>
+                    <uid>{a9493206-7ee5-4a7c-ab12-ef52594b2837}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>requestRead()</declaration>
+                    <properties>512</properties>
+                    <declaration>void registerChanged(RegisterModel *regModel, uint32_t value)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5ee6cb37-6219-4533-91ee-f46475bc9807}</uid>
+                    <uid>{380ebc31-c6b9-4220-89c7-2e98396c4125}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>requestWrite(QString address, QString value)</declaration>
+                    <properties>512</properties>
+                    <declaration>void registerValueChanged(uint32_t address, uint32_t value)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{01bb95f0-8e7d-4c2a-91da-eaed9dca7e5b}</uid>
+                    <uid>{313410c2-026e-4847-a26a-389e1456352c}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>registerValueUpdated(uint32_t value)</declaration>
+                    <properties>512</properties>
+                    <declaration>void requestRead(uint32_t address)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{dd3c1f3a-1876-474c-b4ee-fee9b8af8dc2}</uid>
+                    <uid>{4cc0354d-310a-49f8-9afe-40c3105e20ff}</uid>
+                    <visibility>4</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>registerSelected()</declaration>
+                    <declaration>void requestWrite(uint32_t address, uint32_t value)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2557276c-9889-4a91-bf1f-1b342f048e3d}</uid>
+                    <visibility>4</visibility>
+                    <type>2</type>
+                    <declaration>void registerAddressChanged(uint32_t address)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0dc13a89-6192-4171-a92f-8d4ed321cc09}</uid>
+                    <visibility>4</visibility>
+                    <type>2</type>
+                    <declaration>void requestSearch(QString searchParam)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{49fced2d-ea1b-4b64-ae63-a5092d666665}</uid>
+                    <visibility>4</visibility>
+                    <type>2</type>
+                    <declaration>void searchFinished(QList&lt;uint32_t&gt; searchResult)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1943,7 +2179,6 @@
                                <uid>{90c13e14-2cad-4f43-8097-1c7aba430162}</uid>
                               </MElement>
                              </base-MElement>
-                             <name>&gt; requestRead -&gt; $ read</name>
                              <a>{e51be470-2b52-463d-af05-8c634133695a}</a>
                              <b>{bb6eeb04-87d1-4d6f-bc13-c9955a6cae17}</b>
                             </MRelation>
@@ -1997,29 +2232,6 @@
                         </target>
                        </handle>
                       </item>
-                      <item>
-                       <handle>
-                        <uid>{3a2e7d8d-39e0-42d4-9ae7-465ba8d4b19d}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{3a2e7d8d-39e0-42d4-9ae7-465ba8d4b19d}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <name>&gt; requestWrite -&gt; $write</name>
-                             <a>{e51be470-2b52-463d-af05-8c634133695a}</a>
-                             <b>{bb6eeb04-87d1-4d6f-bc13-c9955a6cae17}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2030,33 +2242,52 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{39aa4d7f-037e-462d-ad6d-a80faf96a24b}</uid>
+                    <uid>{b706c756-314e-429e-9fff-e0e486d8d608}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>QMap&lt;uint32_t, uint32_t&gt; *regReadValues</declaration>
+                    <declaration>RegReadWrite *regReadWrite</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e7c14403-891a-4ebb-acd6-d694f0168ab4}</uid>
+                    <uid>{4cd36c2b-bb27-405b-92a6-540aa7917d9f}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
                     <properties>512</properties>
-                    <declaration>void readDone(QString address, uint32_t value)</declaration>
+                    <declaration>void readDone(uint32_t address, uint32_t value)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f16d125a-da46-4884-9851-78ad03c41db5}</uid>
+                    <uid>{cb2e16f1-4df5-48a0-bde8-7e65b3824da9}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>requestRead(QString address)</declaration>
+                    <properties>512</properties>
+                    <declaration>uint32_t getValueOfRegister(uint32_t address)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{69e40859-bfeb-4aab-8ad6-3eddc57ca315}</uid>
+                    <uid>{812017bc-009b-4004-a1c6-c92778844895}</uid>
+                    <visibility>4</visibility>
                     <type>2</type>
-                    <properties>256</properties>
-                    <declaration>requestWrite(String address, QString value)</declaration>
+                    <declaration>void registerValueChanged(uint32_t address, uint32_t value)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{35a1ce19-8677-42de-ba4e-f55e92b04289}</uid>
+                    <visibility>4</visibility>
+                    <type>2</type>
+                    <declaration>void requestRead(uint32_t address)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8e6809bb-aa19-4243-9fb9-b726f4d6e073}</uid>
+                    <visibility>4</visibility>
+                    <type>2</type>
+                    <declaration>void requestWrite(uint32_t address, uint32_t value)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2079,7 +2310,7 @@
                     <uid>{da12bc7d-b565-4267-81eb-aa0e6ff49554}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>RegisterDetailedWidgetBuilder</name>
+                  <name>RegisterDetailedWidgetFactory</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2194,6 +2425,50 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{d67f256a-4c56-4c37-80ee-29770bf510ed}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d67f256a-4c56-4c37-80ee-29770bf510ed}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{da12bc7d-b565-4267-81eb-aa0e6ff49554}</a>
+                             <b>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{2844a23a-1d24-4956-a330-0dc4114115e4}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{2844a23a-1d24-4956-a330-0dc4114115e4}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{da12bc7d-b565-4267-81eb-aa0e6ff49554}</a>
+                             <b>{706bb346-03ef-4af4-940b-c6dd27527cc0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2204,7 +2479,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{070cb303-91b0-4edc-ad8d-f0c9d3d5a44a}</uid>
+                    <uid>{d511bdf6-bf3c-4c91-870c-d08213f5041f}</uid>
                     <type>2</type>
                     <declaration>buildWidget (RegisterModel*)</declaration>
                    </MClassMember>
@@ -2229,7 +2504,7 @@
                     <uid>{6dcb0af8-2c2c-4f5b-83f5-e962bdac87c2}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>BitFieldBuilder</name>
+                  <name>BitFieldSimpleWidgetFactory</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2256,6 +2531,50 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{ce1d8b37-7f0f-4a93-9056-aadd87aba119}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{ce1d8b37-7f0f-4a93-9056-aadd87aba119}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{6dcb0af8-2c2c-4f5b-83f5-e962bdac87c2}</a>
+                             <b>{d51aad2c-2f41-4177-83b2-9b456db9a612}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{121a3a6a-ce44-4605-83cc-35b96400ec6b}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{121a3a6a-ce44-4605-83cc-35b96400ec6b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{6dcb0af8-2c2c-4f5b-83f5-e962bdac87c2}</a>
+                             <b>{3c653ec6-5e02-4f4c-9b09-69c50575aa9c}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2266,16 +2585,9 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{7a9c6ba7-5355-4a85-bf3c-f50297ef4bec}</uid>
+                    <uid>{3ef32645-f43b-4211-b6f3-540d5fe17926}</uid>
                     <type>2</type>
-                    <declaration>buildDetailedWidget (BitFieldModel*)</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{83380a32-6e92-445e-8afa-b899fb881d8e}</uid>
-                    <type>2</type>
-                    <declaration>buildSimpleWidget (BitFieldModel*)</declaration>
+                    <declaration>buildWidget (BitFieldModel*)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2298,7 +2610,7 @@
                     <uid>{abaa1211-346e-4183-a465-6bb51e75e254}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>RegMapTable</name>
+                  <name>RegisterMapTable</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2325,6 +2637,72 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{b668d916-982a-4f94-9d02-d3d370488f71}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{b668d916-982a-4f94-9d02-d3d370488f71}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{abaa1211-346e-4183-a465-6bb51e75e254}</a>
+                             <b>{d72df1e7-6d02-4de7-a72e-79e1fbd9785c}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{ec57d0f5-1066-4765-8ee7-5080330fd979}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{ec57d0f5-1066-4765-8ee7-5080330fd979}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{abaa1211-346e-4183-a465-6bb51e75e254}</a>
+                             <b>{e51be470-2b52-463d-af05-8c634133695a}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{b99a339e-afc3-46d4-8f8d-62034e12b7fb}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{b99a339e-afc3-46d4-8f8d-62034e12b7fb}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{abaa1211-346e-4183-a465-6bb51e75e254}</a>
+                             <b>{1a2ca15c-c125-46c5-a5af-41f817d187af}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2335,17 +2713,65 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{0f46dcad-8dd7-4fb1-8cd4-811faddfc375}</uid>
+                    <uid>{cc13437f-3b63-4cd9-a1de-8d52e9a4bcf0}</uid>
                     <type>1</type>
-                    <declaration>QMap&lt;uint32_t, RegisterSimpleWidget*&gt;</declaration>
+                    <declaration>QMap&lt;uint32_t, RegisterSimpleWidget*&gt; *registersMap</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b5712778-a8c4-43aa-8217-1f74396d72a5}</uid>
+                    <uid>{64b37b26-cc86-43d0-8501-6644a6f3aa1b}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void valueUpdated(uint32_t address, uint32_t value)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f423a165-8c74-4b66-8f78-139e9081cc12}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void showSearchResults(QList&lt;uint32_t&gt; searchResult)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2e0fbfd4-6011-44e7-ba97-8c800c3348b4}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void hideAll()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{9bf1b677-7af2-4cd9-a4a9-1a399c9546ce}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void showAll()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{91afea4a-4dbc-4741-9a19-155fa0f85ebf}</uid>
                     <type>2</type>
                     <properties>256</properties>
-                    <declaration>readDone()</declaration>
+                    <declaration>void registerSelected(uint32_t address)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d90e976b-0324-4ab9-8b67-f1446134269f}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>void requestSearch(QString param)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f554d181-2185-44b8-ab00-e6be0ad72461}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>SearchBarWidget *searchBarWidget</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2368,7 +2794,7 @@
                     <uid>{74e40c0f-49e2-4f7d-906f-e5d9213e3df5}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>RegisterSimpleWidgetBuilder</name>
+                  <name>RegisterSimpleWidgetFactory</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2395,6 +2821,50 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{da736f32-4cbd-427b-8a1d-b02908727d4b}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{da736f32-4cbd-427b-8a1d-b02908727d4b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{74e40c0f-49e2-4f7d-906f-e5d9213e3df5}</a>
+                             <b>{6dcb0af8-2c2c-4f5b-83f5-e962bdac87c2}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{c21ae78e-efbd-4337-bc77-31997200de23}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{c21ae78e-efbd-4337-bc77-31997200de23}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{74e40c0f-49e2-4f7d-906f-e5d9213e3df5}</a>
+                             <b>{706bb346-03ef-4af4-940b-c6dd27527cc0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2405,7 +2875,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{ac532e56-b6aa-41e5-b05a-1387c875f465}</uid>
+                    <uid>{74598a4b-3db3-446e-aa1e-c0ca4f599335}</uid>
                     <type>2</type>
                     <declaration>buildWidget (RegisterModel*)</declaration>
                    </MClassMember>
@@ -2458,6 +2928,28 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{44e706f2-5126-44ee-9431-c76c827f29f4}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{44e706f2-5126-44ee-9431-c76c827f29f4}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{8db43c4c-5cda-4c03-b77c-b55a47b12412}</a>
+                             <b>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2468,7 +2960,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{958823ba-f589-4fa5-87a7-afe820ae738a}</uid>
+                    <uid>{34f80eaa-422a-424d-af1e-5c84b3162654}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>readDone()</declaration>
@@ -2476,6 +2968,392 @@
                   </item>
                  </qlist>
                 </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>BitFieldDetailedWidgetFactory</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{181d41f8-29d1-444a-a617-0c3eb6166a10}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{181d41f8-29d1-444a-a617-0c3eb6166a10}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</a>
+                             <b>{d51aad2c-2f41-4177-83b2-9b456db9a612}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{06063d74-5e97-4313-99ef-4948e1def393}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{06063d74-5e97-4313-99ef-4948e1def393}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</a>
+                             <b>{4bf01346-4664-48f6-86a5-5c96bf78ba0f}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{e89fff30-cc08-4bd9-9d4e-ae332f097e7e}</uid>
+                    <type>2</type>
+                    <declaration>buildWidget (BitFieldModel*)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{a3451a91-d73b-4533-95d7-553c410b799d}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{a3451a91-d73b-4533-95d7-553c410b799d}</uid>
+                   </MElement>
+                  </base-MElement>
+                 </MObject>
+                </base-MObject>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{1a2ca15c-c125-46c5-a5af-41f817d187af}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{1a2ca15c-c125-46c5-a5af-41f817d187af}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>SearchBarWidget</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{1e76f70b-ebe2-4a0c-aeee-244bae2add92}</uid>
+                    <type>2</type>
+                    <declaration>&gt; requestSearch (QString searchParam)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>BitFieldsDetailedWidget</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{6b150cd8-1dfb-494c-a5f1-4a5e2ec3acda}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{6b150cd8-1dfb-494c-a5f1-4a5e2ec3acda}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</a>
+                             <b>{f40c53c1-ddc3-44d0-9825-4419363ab5a1}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{2b0d54ef-fbc8-4893-9f65-24e09421a9a5}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{2b0d54ef-fbc8-4893-9f65-24e09421a9a5}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bb2371bc-69ca-4f35-b34d-7d1fc48cbcaa}</a>
+                             <b>{706bb346-03ef-4af4-940b-c6dd27527cc0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{dc395856-89ab-4f90-8f05-daedbca3b561}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>void updateBitFieldsValue(uint32_t value)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f828d628-9161-4ceb-bb43-7581798654b4}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>QString getBitFieldsValue()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0be753c4-2725-4688-924d-9f6bf03255f5}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>bitFieldValueChanged(QString value)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ada6112a-db3a-4d17-8a1f-5cabde471737}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>QVector&lt;BitFieldDetailedWidget*&gt; *bitFieldList</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RegisterMapController</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{5bacf81a-2727-485a-a457-0dffdfdf4f7e}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{5bacf81a-2727-485a-a457-0dffdfdf4f7e}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</a>
+                             <b>{d72df1e7-6d02-4de7-a72e-79e1fbd9785c}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{3286e928-ef5f-43dd-94d2-29a3094298b2}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{3286e928-ef5f-43dd-94d2-29a3094298b2}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</a>
+                             <b>{e51be470-2b52-463d-af05-8c634133695a}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{d12805ae-ae47-4910-9802-7368c779962a}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d12805ae-ae47-4910-9802-7368c779962a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f7c14471-0d72-4585-a8cb-60c5c6c99b44}</a>
+                             <b>{a4774960-649d-4f0c-92a5-20c684f70a24}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{e542f867-4897-4d69-9793-fc6db5b70a45}</uid>
+                    <type>1</type>
+                    <declaration>RegisterMapTemplate *registerMapTemplate</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b3162bd7-7105-4399-9e7d-4209654f4159}</uid>
+                    <type>1</type>
+                    <declaration>RegisterMapValues *registerMapValues</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2b4d6e59-96f4-421b-b869-1a142490d18c}</uid>
+                    <type>1</type>
+                    <declaration>RegisterController *registerController</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{9a71776c-7ba4-4889-ab3e-91e42d370321}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{9a71776c-7ba4-4889-ab3e-91e42d370321}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ew Class</name>
+                 </MObject>
+                </base-MObject>
                </MClass>
               </instance>
              </target>

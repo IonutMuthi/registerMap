@@ -4,12 +4,14 @@
 #include <QObject>
 #include <QMap>
 
+class IRegisterWriteStrategy;
+class IRegisterReadStrategy;
 class RegReadWrite;
 class RegisterMapValues : public QObject
 {
 	Q_OBJECT
 public:
-	explicit RegisterMapValues(struct iio_device *dev, QObject *parent = nullptr);
+	explicit RegisterMapValues(IRegisterReadStrategy *readStrategy, IRegisterWriteStrategy *writeStrategy, QObject *parent = nullptr);
 	~RegisterMapValues();
 
 
@@ -24,7 +26,8 @@ signals:
 	void requestWrite(uint32_t address, uint32_t value);
 
 private:
-	RegReadWrite *regReadWrite;
+	IRegisterReadStrategy *readStrategy;
+	IRegisterWriteStrategy *writeStrategy;
 };
 
 #endif // REGISTERMAPVALUES_HPP

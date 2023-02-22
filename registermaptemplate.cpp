@@ -22,6 +22,11 @@ QMap<uint32_t, RegisterModel *> *RegisterMapTemplate::getRegisterList() const
 	return registerList;
 }
 
+RegisterModel *RegisterMapTemplate::getRegisterTemplate(uint32_t address)
+{
+	return registerList->value(address);
+}
+
 void RegisterMapTemplate::setRegisterList(QMap<uint32_t, RegisterModel *> *newRegisterList)
 {
 	registerList = newRegisterList;

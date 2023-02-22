@@ -3,8 +3,6 @@
 
 #include <QWidget>
 
-class RegisterMapTable;
-class BitFieldsDetailedWidget;
 class QTextSpinBox;
 class QLabel;
 class QPushButton;
@@ -16,12 +14,13 @@ class RegisterController : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit RegisterController(QMap<uint32_t, RegisterModel *> *registerModelList, QWidget *parent = nullptr);
+	explicit RegisterController(QWidget *parent = nullptr);
 
 	~RegisterController();
 
 	void registerChanged(RegisterModel *regModel, uint32_t value);
-	void registerValueChanged(uint32_t address, uint32_t value);
+	void registerValueChanged(QString value);
+	void setAddressRange(QList<uint32_t> val);
 
 private:
 
@@ -31,8 +30,7 @@ private:
 	QPushButton *writeButton;
 	QLabel *description;
 	QTextSpinBox *addressPicker;
-	BitFieldsDetailedWidget *bitFieldsDetailedWidget = nullptr;
-	RegisterMapTable *registerMapTableWidget;
+
 
 	bool addressChanged = false;
 
@@ -40,8 +38,7 @@ signals:
 	void requestRead(uint32_t address);
 	void requestWrite(uint32_t address, uint32_t value);
 	void registerAddressChanged(uint32_t address);
-	void requestSearch(QString searchParam);
-	void searchFinished(QList<uint32_t> searchResult);
+	void valueChanged(QString value);
 };
 
 #endif // REGISTERCONTROLLER_HPP

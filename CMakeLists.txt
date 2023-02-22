@@ -16,58 +16,18 @@ find_package(libm2k REQUIRED)
 include_directories(register)
 include_directories(register/bitfield)
 
-set(SOURCES
-    register/bitfield/bitfieldmodel.hpp
-    register/bitfield/bitfieldmodel.cpp
-    register/bitfield/bitfielddetailedwidget.hpp
-    register/bitfield/bitfielddetailedwidget.cpp
-    register/bitfield/bitfieldsimplewidget.hpp
-    register/bitfield/bitfieldsimplewidget.cpp
-    register/bitfield/bitfieldsimplewidgetfactory.hpp
-    register/bitfield/bitfieldsimplewidgetfactory.cpp
-    register/bitfield/bitfielddetailedwidgetfactory.hpp
-    register/bitfield/bitfielddetailedwidgetfactory.cpp
-    register/bitfield/bitfieldsdetailedwidget.hpp
-    register/bitfield/bitfieldsdetailedwidget.cpp
-
-    register/registermodel.hpp
-    register/registermodel.cpp
-    register/registersimplewidget.hpp
-    register/registersimplewidget.cpp
-    register/registersimplewidgetfactory.hpp
-    register/registersimplewidgetfactory.cpp
-)
+file(GLOB REGISTER_SRC register/*.cpp register/*.hpp)
+file(GLOB BITFIELD_SRC register/bitfield/*.cpp register/bitfield/*.hpp)
+file(GLOB SRC_LIST *.cpp *.hpp)
+file(GLOB READ_WRITE readwrite/*.cpp readwrite/*.hpp)
 
 set(PROJECT_SOURCES
-    main.cpp
-    mainwindow.cpp
-    mainwindow.hpp
+    ${SRC_LIST}
+    ${REGISTER_SRC}
+    ${BITFIELD_SRC}
+    ${READ_WRITE}
     mainwindow.ui
 
-    regreadwrite.hpp
-    regreadwrite.cpp
-    xmlfilemanager.hpp
-    xmlfilemanager.cpp
-    verticalscrollarea.hpp
-    verticalscrollarea.cpp
-    searchbarwidget.hpp
-    searchbarwidget.cpp
-    qtextspinbox.hpp
-    qtextspinbox.cpp
-
-    registermapvalues.hpp
-    registermapvalues.cpp
-    registermaptemplate.hpp
-    registermaptemplate.cpp
-
-    registermaptable.hpp
-    registermaptable.cpp
-
-    registercontroller.hpp
-    registercontroller.cpp
-
-    registermapcontroller.hpp
-    registermapcontroller.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
