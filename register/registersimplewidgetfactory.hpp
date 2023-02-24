@@ -12,7 +12,7 @@ public:
 	explicit RegisterSimpleWidgetFactory(QObject *parent = nullptr);
 
 	RegisterSimpleWidget *buildWidget(RegisterModel *model);
-signals:
+Q_SIGNALS:
 
 };
 

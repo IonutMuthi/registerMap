@@ -3,13 +3,12 @@
 #include <QMap>
 #include "registermodel.hpp"
 #include "bitfieldmodel.hpp"
+#include "search.hpp"
 
-RegisterMapTemplate::RegisterMapTemplate(struct iio_device *dev, QString filePath, QObject *parent)
+RegisterMapTemplate::RegisterMapTemplate(QObject *parent)
 	: QObject{parent}
 {
-	XmlFileManager xmlFileManager(dev, filePath);
-	registerList = xmlFileManager.getAllRegisters();
-
+	registerList = new QMap<uint32_t, RegisterModel*>();
 }
 
 RegisterMapTemplate::~RegisterMapTemplate()
@@ -24,7 +23,10 @@ QMap<uint32_t, RegisterModel *> *RegisterMapTemplate::getRegisterList() const
 
 RegisterModel *RegisterMapTemplate::getRegisterTemplate(uint32_t address)
 {
-	return registerList->value(address);
+	if (registerList->contains(address)) {
+		return registerList->value(address);
+	}
+	return getDefaultTemplate();
 }
 
 void RegisterMapTemplate::setRegisterList(QMap<uint32_t, RegisterModel *> *newRegisterList)
@@ -32,31 +34,21 @@ void RegisterMapTemplate::setRegisterList(QMap<uint32_t, RegisterModel *> *newRe
 	registerList = newRegisterList;
 }
 
-void RegisterMapTemplate::searchForRegisters(QString searchParam)
+RegisterModel *RegisterMapTemplate::getDefaultTemplate()
 {
-	if (searchParam.isEmpty()) {
-		Q_EMIT searchDone(registerList->keys());
-	} else {
+	QVector<BitFieldModel*>  *bitFieldsList = new QVector<BitFieldModel*>();
 
-		QList<uint32_t> result;
-
-		QMap<uint32_t, RegisterModel*>::iterator mapIterator;
-		for (mapIterator = registerList->begin(); mapIterator != registerList->end(); ++mapIterator) {
-			QString address = QString::number(mapIterator.key(),16);
-			if (address.contains(searchParam) || mapIterator.value()->getName().contains(searchParam) ){
-				result.push_back(mapIterator.key());
-			} else {
-				for (int i = 0 ; i < mapIterator.value()->getBitFields()->size(); ++i){
-					if (mapIterator.value()->getBitFields()->at(i)->getName().toLower().contains(searchParam) ||
-					    mapIterator.value()->getBitFields()->at(i)->getDescription().toLower().contains(searchParam) ) {
-
-						result.push_back(mapIterator.key());
-						break;
-					}
-				}
-			}
-		}
-
-		Q_EMIT searchDone(result);
+	for (int i = 0 ; i < 8; ++i) {
+		bitFieldsList->push_back(new BitFieldModel("Bit " + QString::number(i) ,1, 8 - i, ""));
 	}
+
+	return new RegisterModel( "Register Name",
+				  0,
+				  "Register Description",
+				  true,
+				  8,
+				  "Reigster Notes",
+				  bitFieldsList
+				  );
 }
+

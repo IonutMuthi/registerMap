@@ -9,7 +9,7 @@ class IRegisterWriteStrategy : public QObject
 public:
 	virtual void write(uint32_t address, uint32_t val) = 0;
 
-signals:
+Q_SIGNALS:
 	void writeError(const char *err);
 	void writeSuccess(uint32_t address);
 };

@@ -12,7 +12,7 @@ public:
 	explicit BitFieldDetailedWidgetFactory(QObject *parent = nullptr);
 
 	BitFieldDetailedWidget *buildWidget(BitFieldModel *model);
-signals:
+Q_SIGNALS:
 
 };
 

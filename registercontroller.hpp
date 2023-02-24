@@ -28,13 +28,10 @@ private:
 	QLineEdit *regValue;
 	QPushButton *readButton;
 	QPushButton *writeButton;
-	QLabel *description;
 	QTextSpinBox *addressPicker;
-
-
 	bool addressChanged = false;
 
-signals:
+Q_SIGNALS:
 	void requestRead(uint32_t address);
 	void requestWrite(uint32_t address, uint32_t value);
 	void registerAddressChanged(uint32_t address);

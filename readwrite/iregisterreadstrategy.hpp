@@ -10,7 +10,7 @@ public:
 
 	virtual void read(uint32_t address) = 0;
 
-signals:
+Q_SIGNALS:
 	void readDone(uint32_t address, uint32_t value);
 	void readError(const char *err);
 };

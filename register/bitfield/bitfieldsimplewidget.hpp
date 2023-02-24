@@ -25,7 +25,7 @@ private:
 	QVBoxLayout *layout;
 	QLabel *value;
 	int width;
-signals:
+Q_SIGNALS:
 
 };
 

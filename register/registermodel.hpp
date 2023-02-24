@@ -32,7 +32,7 @@ private:
 	int width;
 	QString notes;
 	QVector<BitFieldModel*> *bitFields;
-signals:
+Q_SIGNALS:
 
 };
 

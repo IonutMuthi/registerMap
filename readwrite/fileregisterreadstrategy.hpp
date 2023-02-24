@@ -9,7 +9,7 @@ class FileRegisterReadStrategy: public IRegisterReadStrategy
 public:
     FileRegisterReadStrategy(QString path);
     void read(uint32_t address);
-signals:
+Q_SIGNALS:
 
 private:
     QString path;

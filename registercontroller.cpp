@@ -58,8 +58,6 @@ RegisterController::RegisterController(QWidget *parent)
 		Q_EMIT requestWrite(addressPicker->text().toInt(&ok,16), regValue->text().toInt(&ok,16));
 	});
 
-	description = new QLabel("Description : ");
-
 	buttonsLayout->addWidget(readButton);
 	buttonsLayout->addWidget(writeButton);
 
@@ -67,7 +65,6 @@ RegisterController::RegisterController(QWidget *parent)
 	layout->addLayout(valueLayout);
 	layout->addLayout(buttonsLayout);
 
-	layout->addWidget(description);
 }
 
 RegisterController::~RegisterController()
@@ -76,7 +73,6 @@ RegisterController::~RegisterController()
 	delete regValue;
 	delete readButton;
 	delete writeButton;
-	delete description;
 }
 
 void RegisterController::registerChanged(RegisterModel *regModel, uint32_t value)

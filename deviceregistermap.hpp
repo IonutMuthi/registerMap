@@ -7,7 +7,7 @@
 
 class QVBoxLayout;
 class RegisterModel;
-class BitFieldsDetailedWidget;
+class RegisterDetailedWidget;
 class RegisterController;
 class RegisterMapValues;
 class RegisterMapTemplate;
@@ -18,22 +18,22 @@ class DeviceRegisterMap : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit DeviceRegisterMap(struct iio_device* dev, QString path,  QWidget *parent = nullptr);
+	explicit DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate = nullptr, RegisterMapValues *registerMapValues = nullptr,  QWidget *parent = nullptr);
 	~DeviceRegisterMap();
 
 	void registerChanged(RegisterModel *regModel, uint32_t value);
 
 private:
 	QVBoxLayout *layout;
-	RegisterMapTemplate *registerMapTemplate;
+	RegisterMapTemplate *registerMapTemplate ;
 	RegisterMapValues *registerMapValues;
-	RegisterController *registerController;
+	RegisterController *registerController = nullptr;
 
-	SearchBarWidget *searchBarWidget;
-	RegisterMapTable *registerMapTableWidget;
+	SearchBarWidget *searchBarWidget = nullptr;
+	RegisterMapTable *registerMapTableWidget = nullptr;
 
-	BitFieldsDetailedWidget *bitFieldsDetailedWidget = nullptr;
-signals:
+	RegisterDetailedWidget *registerDetailedWidget = nullptr;
+Q_SIGNALS:
 
 };
 

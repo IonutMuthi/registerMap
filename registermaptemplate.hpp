@@ -8,18 +8,18 @@ class RegisterMapTemplate : public QObject
 {
 	Q_OBJECT
 public:
-	explicit RegisterMapTemplate(struct iio_device *dev, QString filePath, QObject *parent = nullptr);
+	explicit RegisterMapTemplate(QObject *parent = nullptr);
 	~RegisterMapTemplate();
 
 	QMap<uint32_t, RegisterModel *> *getRegisterList() const;
 	RegisterModel* getRegisterTemplate(uint32_t address);
 	void setRegisterList(QMap<uint32_t, RegisterModel *> *newRegisterList);
-	void searchForRegisters(QString searchParam);
+	RegisterModel* getDefaultTemplate();
 
 private:
 	QMap<uint32_t, RegisterModel*> *registerList;
-signals:
-	void searchDone(QList<uint32_t> searchResults);
+Q_SIGNALS:
+
 };
 
 #endif // REGISTERMAPTEMPLATE_HPP

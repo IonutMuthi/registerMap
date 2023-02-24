@@ -1,13 +1,16 @@
 #include "bitfieldmodel.hpp"
 
-BitFieldModel::BitFieldModel(QString name, int width,int regOffset, QObject *parent)
+BitFieldModel::BitFieldModel(QString name, int width,int regOffset, QString description, QObject *parent)
 	: name(name),
 	  width(width),
 	  regOffset(regOffset),
+	  description(description),
 	  QObject{parent}
 {
-	reserved = true;
-	description = "Reserved";
+	if (description == "Reserved") {
+		reserved = true;
+	}
+
 	defaultValue = 0;
 
 }

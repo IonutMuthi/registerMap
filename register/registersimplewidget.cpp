@@ -31,7 +31,7 @@ RegisterSimpleWidget::RegisterSimpleWidget(QString name, QString address, QStrin
 
 	QHBoxLayout *bitFieldsWidgetLayout = new QHBoxLayout();
 	// add bitfield widgets
-	for (int i = bitFields->length() - 1; i >= 0; i--) {
+	for (int i = bitFields->length() - 1; i >= 0; --i) {
 		bitFieldsWidgetLayout->addWidget(bitFields->at(i), bitFields->at(i)->getWidth());
 	}
 	layout->addLayout(bitFieldsWidgetLayout,8);

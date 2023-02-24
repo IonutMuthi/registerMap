@@ -5,92 +5,106 @@
 #include "searchbarwidget.hpp"
 #include "registermaptemplate.hpp"
 #include "registermaptable.hpp"
+#include "search.hpp"
 
-#include <bitfieldsdetailedwidget.hpp>
+#include <registerdetailedwidget.hpp>
 #include <iio.h>
 #include <qboxlayout.h>
 #include "readwrite/iioregisterreadstrategy.hpp"
 #include "readwrite/iioregisterwritestrategy.hpp"
 #include "registermodel.hpp"
 
-DeviceRegisterMap::DeviceRegisterMap(iio_device *dev, QString path,  QWidget *parent)
-	: QWidget{parent}
+DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, RegisterMapValues *registerMapValues,  QWidget *parent)
+	: registerMapValues(registerMapValues),
+	  registerMapTemplate(registerMapTemplate),
+	  QWidget{parent}
 {	
 	layout = new QVBoxLayout();
 	setLayout(layout);
 
-	//TODO MOVE registerMapValues and registerMapTemplate as parameters
-	IIORegisterReadStrategy *iioReadStrategy = new IIORegisterReadStrategy(dev);
-	IIORegisterWriteStrategy *iioWriteStrategy = new IIORegisterWriteStrategy(dev);
-	registerMapValues = new RegisterMapValues(iioReadStrategy,iioWriteStrategy);
-	registerMapTemplate = new RegisterMapTemplate(dev, path);
-
-	searchBarWidget = new SearchBarWidget();
-	registerMapTableWidget = new RegisterMapTable(registerMapTemplate->getRegisterList());
-
-	QObject::connect(searchBarWidget, &SearchBarWidget::requestSearch, registerMapTemplate, &RegisterMapTemplate::searchForRegisters);
-	QObject::connect(registerMapTemplate, &RegisterMapTemplate::searchDone, registerMapTableWidget, &RegisterMapTable::setFilters);
-
 	registerController = new RegisterController();
-	registerController->setAddressRange(registerMapTemplate->getRegisterList()->keys());
 
-	QObject::connect(registerMapTableWidget, &RegisterMapTable::registerSelected, this, [=](uint32_t address){
-		registerController->registerChanged(registerMapTemplate->getRegisterList()->value(address),
-						    registerMapValues->getValueOfRegister(address));
-		registerChanged(registerMapTemplate->getRegisterList()->value(address),
-				registerMapValues->getValueOfRegister(address));
-	});
+	QList<uint32_t> addr;
+
+	for (int i = 0; i < 100 ; ++i) {
+		addr.push_back(i);
+	}
+
+	registerController->setAddressRange(addr);
+
+	if (registerMapTemplate) {
+		searchBarWidget = new SearchBarWidget();
+		registerMapTableWidget = new RegisterMapTable(registerMapTemplate->getRegisterList());
+
+		QObject::connect(searchBarWidget, &SearchBarWidget::requestSearch, this, [=](QString searchParam){
+			registerMapTableWidget->setFilters(Search::searchForRegisters(registerMapTemplate->getRegisterList(),searchParam));
+		});
 
 
-	layout->addWidget(searchBarWidget);
-	layout->addWidget(registerMapTableWidget);
+		registerController->setAddressRange(registerMapTemplate->getRegisterList()->keys());
+
+		QObject::connect(registerMapTableWidget, &RegisterMapTable::registerSelected, this, [=](uint32_t address){
+			registerController->registerChanged(registerMapTemplate->getRegisterTemplate(address),
+							    registerMapValues->getValueOfRegister(address));
+			registerChanged(registerMapTemplate->getRegisterTemplate(address),
+					registerMapValues->getValueOfRegister(address));
+		});
 
 
-	QObject::connect(registerController, &RegisterController::registerAddressChanged, this , [=](uint32_t address){
-		registerChanged(registerMapTemplate->getRegisterList()->value(address),
-				registerMapValues->getValueOfRegister(address));
-	});
+		layout->addWidget(searchBarWidget);
+		layout->addWidget(registerMapTableWidget);
+
+
+		QObject::connect(registerController, &RegisterController::registerAddressChanged, this , [=](uint32_t address){
+			registerChanged(registerMapTemplate->getRegisterTemplate(address),
+					registerMapValues->getValueOfRegister(address));
+		});
+
+	}
 
 	QObject::connect(registerController, &RegisterController::requestRead, registerMapValues, &RegisterMapValues::requestRead);
 	QObject::connect(registerController, &RegisterController::requestWrite, registerMapValues, &RegisterMapValues::requestWrite);
 	QObject::connect(registerMapValues, &RegisterMapValues::registerValueChanged, this, [=](uint32_t address, uint32_t value){
-		registerMapTableWidget->valueUpdated(address, value);
 		registerController->registerValueChanged(QString::number(value,16));
-		bitFieldsDetailedWidget->updateBitFieldsValue(value);
+		if (registerMapTemplate) {
+			registerMapTableWidget->valueUpdated(address, value);
+			registerDetailedWidget->updateBitFieldsValue(value);
+		}
 	});
 
 	layout->addWidget(registerController);
 
-	registerChanged(registerMapTemplate->getRegisterList()->begin().value(),registerMapValues->getValueOfRegister(registerMapTemplate->getRegisterList()->begin().key()));
+	if (registerMapTemplate) {
+		//	registerChanged(registerMapTemplate->getRegisterList()->begin().value(),registerMapValues->getValueOfRegister(registerMapTemplate->getRegisterList()->begin().key()));
+		registerChanged(registerMapTemplate->getRegisterTemplate(2000),0);
+	}
 }
 
 DeviceRegisterMap::~DeviceRegisterMap()
 {
 	delete layout;
-	delete registerMapTemplate;
-	delete registerMapValues;
-	delete registerController;
-	delete registerMapTableWidget;
-	delete searchBarWidget;
-	if (bitFieldsDetailedWidget) delete bitFieldsDetailedWidget;
+	if (registerController) delete registerController;
+	if (registerMapTableWidget) delete registerMapTableWidget;
+	if (searchBarWidget) delete searchBarWidget;
+	if (registerDetailedWidget) delete registerDetailedWidget;
 }
 
 void DeviceRegisterMap::registerChanged(RegisterModel *regModel, uint32_t value)
 {
-	if (bitFieldsDetailedWidget) delete bitFieldsDetailedWidget;
+	if (registerDetailedWidget) delete registerDetailedWidget;
 
-	bitFieldsDetailedWidget = new BitFieldsDetailedWidget(regModel->getBitFields());
-	layout->addWidget(bitFieldsDetailedWidget);
+	registerDetailedWidget = new RegisterDetailedWidget(regModel);
+	layout->addWidget(registerDetailedWidget);
 
 	if (value) {
-		bitFieldsDetailedWidget->updateBitFieldsValue(value);
+		registerDetailedWidget->updateBitFieldsValue(value);
 	}
 
-	QObject::connect(bitFieldsDetailedWidget, &BitFieldsDetailedWidget::bitFieldValueChanged, registerController, &RegisterController::registerValueChanged);
+	QObject::connect(registerDetailedWidget, &RegisterDetailedWidget::bitFieldValueChanged, registerController, &RegisterController::registerValueChanged);
 
 	QObject::connect(registerController, &RegisterController::valueChanged, this, [=](QString val){
 		bool ok;
-		bitFieldsDetailedWidget->updateBitFieldsValue(val.toUInt(&ok,16));
+		registerDetailedWidget->updateBitFieldsValue(val.toUInt(&ok,16));
 	});
 }
 

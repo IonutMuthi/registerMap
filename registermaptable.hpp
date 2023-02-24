@@ -22,7 +22,7 @@ public:
 	void setFilters(QList<uint32_t> filters);
 	void hideAll();
 	void showAll();
-signals:
+Q_SIGNALS:
 	void registerSelected(uint32_t address);
 
 

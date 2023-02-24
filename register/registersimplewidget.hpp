@@ -28,7 +28,7 @@ private:
 	QString address;
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
-signals:
+Q_SIGNALS:
     void registerSelected(uint32_t address);
 };
 

@@ -10,7 +10,7 @@ class IIORegisterReadStrategy : public IRegisterReadStrategy
 public:
 	explicit IIORegisterReadStrategy(struct iio_device *dev);
 	void read(uint32_t address);
-signals:
+Q_SIGNALS:
 
 private:
 	struct iio_device *dev;

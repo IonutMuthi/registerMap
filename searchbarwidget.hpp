@@ -13,7 +13,7 @@ public:
 	explicit SearchBarWidget(QWidget *parent = nullptr);
 	~SearchBarWidget();
 
-signals:
+Q_SIGNALS:
 	void requestSearch(QString searchParam);
 private:
 	QLineEdit *searchBar;

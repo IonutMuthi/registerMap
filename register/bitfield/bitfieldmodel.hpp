@@ -8,7 +8,7 @@ class BitFieldModel : public QObject
 {
 	Q_OBJECT
 public:
-	BitFieldModel(QString name, int width,int regOffset, QObject *parent = nullptr);
+	BitFieldModel(QString name, int width,int regOffset, QString description, QObject *parent = nullptr);
 
 	BitFieldModel(   QString name,
 			 QString access,
@@ -51,7 +51,7 @@ private:
 
 	bool reserved;
 
-signals:
+Q_SIGNALS:
 
 };
 

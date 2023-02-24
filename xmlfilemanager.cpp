@@ -125,12 +125,12 @@ QVector<BitFieldModel*> *XmlFileManager::getBitFieldsOfRegister(QDomElement reg)
 					bf = bf.nextSibling().toElement();
 					numberOfBits += bitField->getWidth();
 				} else {
-					BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), 1, numberOfBits, nullptr);
+					BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), 1, numberOfBits, "Reserved" , nullptr);
 					bitFieldsList->push_back(bitField);
 					numberOfBits++;
 				}
 			} else { //for all remaining ?
-				BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), regWidth - numberOfBits, numberOfBits, nullptr);
+				BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), regWidth - numberOfBits, numberOfBits, "Reserved", nullptr);
 				bitFieldsList->push_back(bitField);
 				numberOfBits += regWidth - numberOfBits;
 			}

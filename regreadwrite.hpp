@@ -18,7 +18,7 @@ public:
 	void read(uint32_t address);
 	void write(uint32_t address, uint32_t val);
 
-signals:
+Q_SIGNALS:
 	void readDone(uint32_t address, uint32_t value);
 	void readError(const char *err);
 	void writeError(const char *err);
