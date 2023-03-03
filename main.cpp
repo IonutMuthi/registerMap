@@ -1,7 +1,8 @@
 #include "mainwindow.hpp"
-#include "logging_categories.h"
+#include "src/logging_categories.h"
 
 #include <QApplication>
+#include <qfile.h>
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,11 @@ int main(int argc, char *argv[])
 					 );
 
 	QApplication a(argc, argv);
+	QString path("/home/ubuntu/Documents/default.qss");
+	QFile file(path);
+	file.open(QFile::ReadOnly);
+	QString stylesheet = QString::fromLatin1(file.readAll());
+	a.setStyleSheet(stylesheet);
 	MainWindow w;
 	w.show();
 	return a.exec();

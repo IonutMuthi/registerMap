@@ -1,8 +1,8 @@
 #include "registermaptemplate.hpp"
 #include "xmlfilemanager.hpp"
 #include <QMap>
-#include "registermodel.hpp"
-#include "bitfieldmodel.hpp"
+#include "register/registermodel.hpp"
+#include "register/bitfield/bitfieldmodel.hpp"
 #include "search.hpp"
 
 RegisterMapTemplate::RegisterMapTemplate(QObject *parent)

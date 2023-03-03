@@ -1,7 +1,7 @@
 #include "search.hpp"
 
-#include <registermodel.hpp>
-#include <bitfieldmodel.hpp>
+#include "register/registermodel.hpp"
+#include "register/bitfield/bitfieldmodel.hpp"
 
 Search::Search(QObject *parent)
 	: QObject{parent}

@@ -7,12 +7,13 @@
 #include "registermaptable.hpp"
 #include "search.hpp"
 
-#include <registerdetailedwidget.hpp>
 #include <iio.h>
 #include <qboxlayout.h>
 #include "readwrite/iioregisterreadstrategy.hpp"
 #include "readwrite/iioregisterwritestrategy.hpp"
-#include "registermodel.hpp"
+#include "register/registerdetailedwidget.hpp"
+#include "register/registermodel.hpp"
+#include "register/registersimplewidgetfactory.hpp"
 
 DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, RegisterMapValues *registerMapValues,  QWidget *parent)
 	: registerMapValues(registerMapValues),
@@ -24,14 +25,6 @@ DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, R
 
 	registerController = new RegisterController();
 
-	QList<uint32_t> addr;
-
-	for (int i = 0; i < 100 ; ++i) {
-		addr.push_back(i);
-	}
-
-	registerController->setAddressRange(addr);
-
 	if (registerMapTemplate) {
 		searchBarWidget = new SearchBarWidget();
 		registerMapTableWidget = new RegisterMapTable(registerMapTemplate->getRegisterList());
@@ -40,14 +33,9 @@ DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, R
 			registerMapTableWidget->setFilters(Search::searchForRegisters(registerMapTemplate->getRegisterList(),searchParam));
 		});
 
-
-		registerController->setAddressRange(registerMapTemplate->getRegisterList()->keys());
-
 		QObject::connect(registerMapTableWidget, &RegisterMapTable::registerSelected, this, [=](uint32_t address){
-			registerController->registerChanged(registerMapTemplate->getRegisterTemplate(address),
-							    registerMapValues->getValueOfRegister(address));
-			registerChanged(registerMapTemplate->getRegisterTemplate(address),
-					registerMapValues->getValueOfRegister(address));
+
+			registerChanged(registerMapTemplate->getRegisterTemplate(address));
 		});
 
 
@@ -56,8 +44,7 @@ DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, R
 
 
 		QObject::connect(registerController, &RegisterController::registerAddressChanged, this , [=](uint32_t address){
-			registerChanged(registerMapTemplate->getRegisterTemplate(address),
-					registerMapValues->getValueOfRegister(address));
+			registerChanged(registerMapTemplate->getRegisterTemplate(address));
 		});
 
 	}
@@ -76,7 +63,8 @@ DeviceRegisterMap::DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate, R
 
 	if (registerMapTemplate) {
 		//	registerChanged(registerMapTemplate->getRegisterList()->begin().value(),registerMapValues->getValueOfRegister(registerMapTemplate->getRegisterList()->begin().key()));
-		registerChanged(registerMapTemplate->getRegisterTemplate(2000),0);
+		// temporary to init with default value for detailed register
+		registerChanged(registerMapTemplate->getRegisterTemplate(2000));
 	}
 }
 
@@ -89,15 +77,24 @@ DeviceRegisterMap::~DeviceRegisterMap()
 	if (registerDetailedWidget) delete registerDetailedWidget;
 }
 
-void DeviceRegisterMap::registerChanged(RegisterModel *regModel, uint32_t value)
+void DeviceRegisterMap::registerChanged(RegisterModel *regModel)
 {
+	registerController->registerChanged(regModel->getAddress());
+	registerController->registerValueChanged("Not Read");
+
 	if (registerDetailedWidget) delete registerDetailedWidget;
 
 	registerDetailedWidget = new RegisterDetailedWidget(regModel);
 	layout->addWidget(registerDetailedWidget);
+	if (registerMapValues) {
+		uint32_t address = regModel->getAddress();
+		if (registerMapValues->hasValue(address)) {
+			uint32_t value = registerMapValues->getValueOfRegister(address);
+			registerDetailedWidget->updateBitFieldsValue(value);
+			registerController->registerValueChanged(QString::number(value,16));
+		}
 
-	if (value) {
-		registerDetailedWidget->updateBitFieldsValue(value);
+
 	}
 
 	QObject::connect(registerDetailedWidget, &RegisterDetailedWidget::bitFieldValueChanged, registerController, &RegisterController::registerValueChanged);

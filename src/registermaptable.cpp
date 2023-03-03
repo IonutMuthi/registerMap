@@ -1,20 +1,20 @@
 #include "registermaptable.hpp"
 #include "verticalscrollarea.hpp"
-
 #include <QLineEdit>
 #include <qboxlayout.h>
 #include <qboxlayout.h>
 #include <qpushbutton.h>
-#include <registermodel.hpp>
-#include <registersimplewidget.hpp>
-#include <registersimplewidgetfactory.hpp>
+#include "register/registersimplewidgetfactory.hpp"
+#include "register/registermodel.hpp"
+#include "register/bitfield/bitfieldmodel.hpp"
+#include "register/registersimplewidget.hpp"
 
 RegisterMapTable::RegisterMapTable(QMap<uint32_t, RegisterModel *> *registerModels, QWidget *parent)
 	: QWidget{parent}
 {
 	layout = new QVBoxLayout();
 	setLayout(layout);
-
+	setStyleSheet("border: 1px solid black");
 	scrollArea = new VerticalScrollArea();
 	registerTableLayout = new QVBoxLayout();
 	registerTable = new QWidget();

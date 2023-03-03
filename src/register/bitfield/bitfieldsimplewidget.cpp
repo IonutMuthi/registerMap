@@ -4,13 +4,16 @@
 #include <qlabel.h>
 
 
-BitFieldSimpleWidget::BitFieldSimpleWidget(QString name, int defaultValue, QString description, int width, QString notes, int regOffset, QWidget *parent):
-	width(width)
+BitFieldSimpleWidget::BitFieldSimpleWidget(QString name, int defaultValue, QString description, int width, QString notes, int regOffset, int streach, QWidget *parent):
+	width(width),
+	description(description),
+	streach(streach),
+	QWidget{parent}
 {
 
 	setMinimumWidth(10);
 	setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
-	setStyleSheet("border: 1px solid black");
+	//	setStyleSheet("border: 1px solid black");
 
 	layout = new QVBoxLayout();
 
@@ -47,4 +50,14 @@ void BitFieldSimpleWidget::updateValue(QString newValue)
 int BitFieldSimpleWidget::getWidth() const
 {
 	return width;
+}
+
+QString BitFieldSimpleWidget::getDescription() const
+{
+	return description;
+}
+
+int BitFieldSimpleWidget::getStreach() const
+{
+	return streach;
 }

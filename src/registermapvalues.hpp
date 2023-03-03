@@ -26,6 +26,9 @@ public:
 
 	IRegisterWriteStrategy *getWriteStrategy() const;
 
+	QMap<uint32_t, uint32_t> *getRegisterReadValues() const;
+	bool hasValue(uint32_t address);
+
 Q_SIGNALS:
 	void registerValueChanged(uint32_t address, uint32_t value);
 	void requestRead(uint32_t address);

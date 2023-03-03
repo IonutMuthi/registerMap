@@ -11,7 +11,7 @@ class BitFieldSimpleWidgetFactory : public QObject
 public:
 	explicit BitFieldSimpleWidgetFactory(QObject *parent = nullptr);
 
-	BitFieldSimpleWidget *buildWidget(BitFieldModel *model);
+	BitFieldSimpleWidget *buildWidget(BitFieldModel *model, int streach);
 Q_SIGNALS:
 
 };

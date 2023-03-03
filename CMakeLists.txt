@@ -10,22 +10,24 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Xml)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Xml Test)
 find_package(libm2k REQUIRED)
 
 include_directories(register)
 include_directories(register/bitfield)
 
-file(GLOB REGISTER_SRC register/*.cpp register/*.hpp)
-file(GLOB BITFIELD_SRC register/bitfield/*.cpp register/bitfield/*.hpp)
-file(GLOB SRC_LIST *.cpp *.hpp)
-file(GLOB READ_WRITE readwrite/*.cpp readwrite/*.hpp)
+file(GLOB REGISTER_SRC src/register/*.cpp src/register/*.hpp)
+file(GLOB BITFIELD_SRC src/register/bitfield/*.cpp src/register/bitfield/*.hpp)
+file(GLOB SRC_LIST src/*.cpp src/*.hpp *.cpp *.hpp)
+file(GLOB READ_WRITE src/readwrite/*.cpp src/readwrite/*.hpp)
+file(GLOB TEST test/*.cpp test/*.hpp)
 
 set(PROJECT_SOURCES
     ${SRC_LIST}
     ${REGISTER_SRC}
     ${BITFIELD_SRC}
     ${READ_WRITE}
+    ${TEST}
     mainwindow.ui
 
 )
@@ -55,7 +57,7 @@ else()
 endif()
 endif()
 
-target_link_libraries(RegisterMapDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Xml libm2k::libm2k)
+target_link_libraries(RegisterMapDemo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Xml libm2k::libm2k Qt5::Test)
 
 set_target_properties(RegisterMapDemo PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

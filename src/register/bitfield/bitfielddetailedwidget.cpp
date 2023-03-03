@@ -11,9 +11,10 @@ BitFieldDetailedWidget::BitFieldDetailedWidget(QString name, int defaultValue, Q
 					       int width, QString notes, int regOffset, QMap<QString, QString> *options, QWidget *parent)
 	:options(options),
 	  width(width),
-	  description(description)
+	  description(description),
+	  regOffset(regOffset)
 {
-	setStyleSheet("border: 1px solid black");
+//	setStyleSheet("border: 1px solid black");
 	setMinimumWidth(10);
 	setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
 
@@ -153,4 +154,9 @@ QString BitFieldDetailedWidget::getValue()
 int BitFieldDetailedWidget::getWidth() const
 {
 	return width;
+}
+
+int BitFieldDetailedWidget::getRegOffset() const
+{
+	return regOffset;
 }

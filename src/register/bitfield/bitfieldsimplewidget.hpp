@@ -15,16 +15,24 @@ public:
 				      int width,
 				      QString notes,
 				      int regOffset,
+				      int streach,
 				      QWidget *parent = nullptr);
 
 	~BitFieldSimpleWidget();
 	void updateValue(QString newValue);
 	int getWidth() const;
 
+
+	QString getDescription() const;
+
+	int getStreach() const;
+
 private:
 	QVBoxLayout *layout;
 	QLabel *value;
 	int width;
+	int streach;
+	QString description;
 Q_SIGNALS:
 
 };

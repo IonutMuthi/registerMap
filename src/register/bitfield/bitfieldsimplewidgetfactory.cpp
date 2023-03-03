@@ -8,12 +8,13 @@ BitFieldSimpleWidgetFactory::BitFieldSimpleWidgetFactory(QObject *parent)
 
 }
 
-BitFieldSimpleWidget *BitFieldSimpleWidgetFactory::buildWidget(BitFieldModel *model)
+BitFieldSimpleWidget *BitFieldSimpleWidgetFactory::buildWidget(BitFieldModel *model, int streach)
 {
 	return new BitFieldSimpleWidget(model->getName(),
 					model->getDefaultValue(),
 					model->getDescription(),
 					model->getWidth(),
 					model->getNotes(),
-					model->getRegOffset());
+					model->getRegOffset(),
+					streach);
 }

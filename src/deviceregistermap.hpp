@@ -21,7 +21,7 @@ public:
 	explicit DeviceRegisterMap(RegisterMapTemplate *registerMapTemplate = nullptr, RegisterMapValues *registerMapValues = nullptr,  QWidget *parent = nullptr);
 	~DeviceRegisterMap();
 
-	void registerChanged(RegisterModel *regModel, uint32_t value);
+	void registerChanged(RegisterModel *regModel);
 
 private:
 	QVBoxLayout *layout;

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+class QSpinBox;
 class QTextSpinBox;
 class QLabel;
 class QPushButton;
@@ -18,9 +19,8 @@ public:
 
 	~RegisterController();
 
-	void registerChanged(RegisterModel *regModel, uint32_t value);
+	void registerChanged(uint32_t address);
 	void registerValueChanged(QString value);
-	void setAddressRange(QList<uint32_t> val);
 
 private:
 
@@ -28,7 +28,7 @@ private:
 	QLineEdit *regValue;
 	QPushButton *readButton;
 	QPushButton *writeButton;
-	QTextSpinBox *addressPicker;
+	QSpinBox *addressPicker;
 	bool addressChanged = false;
 
 Q_SIGNALS:

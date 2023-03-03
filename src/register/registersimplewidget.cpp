@@ -1,15 +1,12 @@
-#include "bitfieldsimplewidget.hpp"
+#include "bitfield/bitfieldsimplewidget.hpp"
 #include "registersimplewidget.hpp"
-
 #include <QLabel>
 #include <qboxlayout.h>
 #include <qcoreevent.h>
-
 #include <qdebug.h>
 
-
 RegisterSimpleWidget::RegisterSimpleWidget(QString name, QString address, QString description,
-					   QString notes, QVector<BitFieldSimpleWidget *> *bitFields, QWidget *parent)
+					   QString notes,int registerWidth, QVector<BitFieldSimpleWidget *> *bitFields, QWidget *parent)
 	:bitFields(bitFields),
 	  address(address)
 {
@@ -17,7 +14,8 @@ RegisterSimpleWidget::RegisterSimpleWidget(QString name, QString address, QStrin
 
 	setMinimumWidth(10);
 	setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
-	setStyleSheet("border: 1px solid black");
+
+	m_colors = new QMap<QString, QColor>();
 
 	QHBoxLayout *layout = new QHBoxLayout();
 	setLayout(layout);
@@ -29,11 +27,30 @@ RegisterSimpleWidget::RegisterSimpleWidget(QString name, QString address, QStrin
 
 	layout->addLayout(regBaseInfo,1);
 
-	QHBoxLayout *bitFieldsWidgetLayout = new QHBoxLayout();
 	// add bitfield widgets
-	for (int i = bitFields->length() - 1; i >= 0; --i) {
-		bitFieldsWidgetLayout->addWidget(bitFields->at(i), bitFields->at(i)->getWidth());
+
+	QGridLayout *bitFieldsWidgetLayout = new QGridLayout();
+	int bits = bitFields->length() - 1;
+	int row = 0;
+	int col = 0;
+
+	while (bits >= 0 ) {
+//		QColor color = getColor(bitFields->at(bits)->getDescription());
+//		bitFields->at(bits)->setStyleSheet("background-color: rgb(" + QString::number(color.red()) + "," + QString::number(color.green()) +"," + QString::number(color.blue()) + ");");
+		int streach = bitFields->at(bits)->getStreach();
+		bitFieldsWidgetLayout->addWidget(bitFields->at(bits), row, col, 1, streach);
+		col += streach;
+		if (col > 7) {
+			row++;
+			col = 0;
+		}
+		--bits;
 	}
+
+	for (int i = 0; i < bitFieldsWidgetLayout->columnCount(); i++){
+		bitFieldsWidgetLayout->setColumnStretch(i,1);
+	}
+
 	layout->addLayout(bitFieldsWidgetLayout,8);
 
 	QString toolTip = "Name : " + name + "\n"
@@ -58,20 +75,31 @@ void RegisterSimpleWidget::valueUpdated(uint32_t value)
 		int width = bitFields->at(i)->getWidth();
 		int bfVal = ( ((1 << (regOffset + width) ) - 1 ) & value) >> regOffset;
 		QString bitFieldValue =  QString::number(bfVal,16);
-		if (bitFieldValue.size() < width) {
-			QString aux = "";
-			while ( aux.size() < (width - bitFieldValue.size() )) {
-				aux += "0";
-			}
-			bitFieldValue = aux + bitFieldValue;
-		}
+//		if (bitFieldValue.size() < width) {
+//			QString aux = "";
+//			while ( aux.size() < (width - bitFieldValue.size() )) {
+//				aux += "0";
+//			}
+//			bitFieldValue = aux + bitFieldValue;
+//		}
 		bitFields->at(i)->updateValue(bitFieldValue);
 		regOffset += width;
 
 		bitFields->at(i)->blockSignals(false);
 	}
-
 	this->value->setText(QString::number(value,16));
+}
+
+QColor RegisterSimpleWidget::getColor(QString description)
+{
+
+	if (m_colors->contains(description)) return m_colors->value(description);
+
+	int red = rand() % 256;
+	int blue = rand() % 256;
+	int green = rand() % 256;
+	m_colors->insert(description, QColor(red,green,blue));
+	return m_colors->value(description);
 }
 
 bool RegisterSimpleWidget::eventFilter(QObject *object, QEvent *event)

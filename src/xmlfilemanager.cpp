@@ -1,5 +1,5 @@
-#include "bitfieldmodel.hpp"
-#include "registermodel.hpp"
+#include "register/bitfield/bitfieldmodel.hpp"
+#include "register/registermodel.hpp"
 #include "xmlfilemanager.hpp"
 
 #include <QDomDocument>
@@ -119,21 +119,24 @@ QVector<BitFieldModel*> *XmlFileManager::getBitFieldsOfRegister(QDomElement reg)
 		int numberOfBits = 0;
 		while(numberOfBits < regWidth) {
 			if (!bf.isNull()) {
-				if ( bf.firstChildElement("RegOffset").firstChild().toText().data().toInt() == numberOfBits){
+				int bitFieldRegOffset = bf.firstChildElement("RegOffset").firstChild().toText().data().toInt();
+				if ( bitFieldRegOffset == numberOfBits){
 					BitFieldModel *bitField = getBitField(bf);
 					bitFieldsList->push_back(bitField);
 					bf = bf.nextSibling().toElement();
 					numberOfBits += bitField->getWidth();
 				} else {
-					BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), 1, numberOfBits, "Reserved" , nullptr);
+					BitFieldModel *bitField = new BitFieldModel("Bit " +QString::number(bitFieldRegOffset -1) + ":" + QString::number(numberOfBits), bitFieldRegOffset - numberOfBits, numberOfBits , "Reserved" , nullptr);
 					bitFieldsList->push_back(bitField);
-					numberOfBits++;
+					numberOfBits+= bitFieldRegOffset - numberOfBits;
 				}
 			} else { //for all remaining ?
-				BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(numberOfBits), regWidth - numberOfBits, numberOfBits, "Reserved", nullptr);
+				BitFieldModel *bitField = new BitFieldModel("Bit " + QString::number(regWidth -1) + ":" + QString::number(numberOfBits) , regWidth - numberOfBits, numberOfBits, "Reserved", nullptr);
 				bitFieldsList->push_back(bitField);
 				numberOfBits += regWidth - numberOfBits;
 			}
+//			bf = bf.nextSibling().toElement();
+
 		}
 		return bitFieldsList;
 	}

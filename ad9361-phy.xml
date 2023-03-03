@@ -9,7 +9,7 @@
 		<Address>0x000</Address>
 		<Description>SPI Configuration</Description>
 		<Exists>True</Exists>
-		<Width>8</Width>
+		<Width>32</Width>
 		<Notes></Notes>
 		<BitFields>
 		<BitField>
@@ -19,17 +19,7 @@
 			<Description>Must be 0</Description>
 			<Visibility>Public</Visibility>
 			<Width>1</Width>
-                        <Notes></Notes>
-                        <Options>
-                                <Option>
-                                        <Description>bit off</Description>
-                                        <Value>0</Value>
-                                </Option>
-                                <Option>
-                                        <Description>bit on</Description>
-                                        <Value>1</Value>
-                                </Option>
-                        </Options>
+			<Notes></Notes>
 			<BitOffset>0</BitOffset>
 			<RegOffset>0</RegOffset>
 			<SliceWidth>1</SliceWidth>
@@ -101,7 +91,7 @@
 		<Address>0x001</Address>
 		<Description>Multi-Chip Sync and Tx Mon Control</Description>
 		<Exists>True</Exists>
-		<Width>8</Width>
+		<Width>16</Width>
 		<Notes></Notes>
 		<BitFields>
 		<BitField>
@@ -183,7 +173,7 @@
 		<Address>0x002</Address>
 		<Description>Tx Enable and Filter Control</Description>
 		<Exists>True</Exists>
-		<Width>8</Width>
+		<Width>32</Width>
 		<Notes></Notes>
 		<BitFields>
 		<BitField>
@@ -240,12 +230,25 @@
 			<DefaultValue>1</DefaultValue>
 			<Description>Tx Channel Enable&lt;1:0&gt;</Description>
 			<Visibility>Public</Visibility>
-			<Width>2</Width>
+			<Width>3</Width>
 			<Notes></Notes>
 			<BitOffset>0</BitOffset>
 			<RegOffset>6</RegOffset>
-			<SliceWidth>2</SliceWidth>
+			<SliceWidth>3</SliceWidth>
 		</BitField>
+		<BitField>
+			<Name>reg002_b16_b8</Name>
+			<Access>R/W</Access>
+			<DefaultValue>1</DefaultValue>
+			<Description>test multiple row register</Description>
+			<Visibility>Public</Visibility>
+			<Width>9</Width>
+			<Notes></Notes>
+			<BitOffset>0</BitOffset>
+			<RegOffset>11</RegOffset>
+			<SliceWidth>9</SliceWidth>
+		</BitField>
+
 		</BitFields>
 	</Register>
 	<Register>
@@ -253,7 +256,7 @@
 		<Address>0x003</Address>
 		<Description>Rx Enable and Filter  Control</Description>
 		<Exists>True</Exists>
-		<Width>8</Width>
+		<Width>16</Width>
 		<Notes></Notes>
 		<BitFields>
 		<BitField>

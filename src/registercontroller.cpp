@@ -1,18 +1,13 @@
-#include "bitfieldsimplewidget.hpp"
-#include "bitfielddetailedwidget.hpp"
 #include "registercontroller.hpp"
-#include "registermodel.hpp"
-#include "bitfieldmodel.hpp"
-#include "registersimplewidget.hpp"
 #include "qtextspinbox.hpp"
 
 #include <QVBoxLayout>
-#include <bitfielddetailedwidgetfactory.hpp>
 #include <qboxlayout.h>
 #include <qlabel.h>
 #include <qlineedit.h>
 #include <qdebug.h>
 #include <QPushButton>
+#include <qspinbox.h>
 
 RegisterController::RegisterController(QWidget *parent)
 	: QWidget{parent}
@@ -27,9 +22,11 @@ RegisterController::RegisterController(QWidget *parent)
 	// make address a spinbox with custom value for custom hexa values ?
 	QHBoxLayout *addressLayout = new QHBoxLayout();
 	addressLayout->addWidget(new QLabel("Address: "));
-	addressPicker = new QTextSpinBox();
+	addressPicker = new QSpinBox();
+	addressPicker->setDisplayIntegerBase(16);
+	addressPicker->setMinimum(0);
 
-	QObject::connect(addressPicker, &QTextSpinBox::textChanged, this, [=](QString address){
+	QObject::connect(addressPicker, &QSpinBox::textChanged, this, [=](QString address){
 		addressChanged = true;
 		bool ok;
 		Q_EMIT	registerAddressChanged(address.toInt(&ok,16));
@@ -75,32 +72,17 @@ RegisterController::~RegisterController()
 	delete writeButton;
 }
 
-void RegisterController::registerChanged(RegisterModel *regModel, uint32_t value)
+void RegisterController::registerChanged(uint32_t address)
 {
 	if (!addressChanged) {
-		addressPicker->setValue(regModel->getAddress());
+		addressPicker->setValue(address);
 	} else {
 		addressChanged = false;
-	}
-
-	if (value) {
-		regValue->setText(QString::number(value,16));
 	}
 }
 
 void RegisterController::registerValueChanged(QString value)
 {
 	regValue->setText(value);
-}
-
-void RegisterController::setAddressRange(QList<uint32_t> val)
-{
-	QList<QString> *values = new QList<QString>();
-	foreach (uint32_t addr , val) {
-		values->push_back(QString::number(addr,16));
-	}
-
-	addressPicker->setValues(values);
-	addressPicker->setMinimum(0);
 }
 

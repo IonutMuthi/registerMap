@@ -18,9 +18,19 @@ RegisterMapValues::~RegisterMapValues()
 	delete registerReadValues;
 }
 
+QMap<uint32_t, uint32_t> *RegisterMapValues::getRegisterReadValues() const
+{
+	return registerReadValues;
+}
+
+bool RegisterMapValues::hasValue(uint32_t address)
+{
+	return registerReadValues->contains(address);
+}
+
 void RegisterMapValues::readDone(uint32_t address, uint32_t value)
 {
-	registerReadValues->insert(address,value);
+	registerReadValues->insert(address, value);
 	Q_EMIT registerValueChanged(address, value);
 }
 

@@ -29,12 +29,15 @@ public:
 
 	int getWidth() const;
 
+	int getRegOffset() const;
+
 private:
 	QVBoxLayout *layout;
 	QString toolTip;
 	int width;
 	QString description;
 	bool reserved;
+	int regOffset;
 
 	QMap<QString,QString> *options;
 	QLabel *value;

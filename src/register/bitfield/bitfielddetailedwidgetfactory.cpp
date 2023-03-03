@@ -1,7 +1,7 @@
 #include "bitfielddetailedwidgetfactory.hpp"
 
-#include <bitfielddetailedwidget.hpp>
-#include <bitfieldmodel.hpp>
+#include "bitfielddetailedwidget.hpp"
+#include "bitfieldmodel.hpp"
 
 BitFieldDetailedWidgetFactory::BitFieldDetailedWidgetFactory(QObject *parent)
 	: QObject{parent}

@@ -1,34 +1,51 @@
 #include "registerdetailedwidget.hpp"
-
-#include <bitfielddetailedwidget.hpp>
-#include <bitfielddetailedwidgetfactory.hpp>
+#include "bitfield/bitfielddetailedwidget.hpp"
+#include "bitfield/bitfielddetailedwidgetfactory.hpp"
+#include "../verticalscrollarea.hpp"
 #include <qboxlayout.h>
 #include <qboxlayout.h>
 #include <qlabel.h>
-#include <registermodel.hpp>
+#include "registermodel.hpp"
+#include "qdebug.h"
+#include <QtMath>
 
 RegisterDetailedWidget::RegisterDetailedWidget( RegisterModel *regModel, QWidget *parent)
 	: QWidget{parent}
 {
-
+	this->setStyleSheet("border: 1px solid black");
 	QVBoxLayout *layout = new QVBoxLayout(this);
 	setLayout(layout);
 	description = new QLabel("Description : " + regModel->getDescription());
 
 	layout->addWidget(description);
 
-	QHBoxLayout *bitFieldsWidgetLayout = new QHBoxLayout();
-	layout->addLayout(bitFieldsWidgetLayout);
+	QGridLayout *bitFieldsWidgetLayout = new QGridLayout();
+
 
 	bitFieldList = new QVector<BitFieldDetailedWidget*>();
 
 	BitFieldDetailedWidgetFactory bitFieldDetailedWidgetFactory;
 
+	QWidget *bitFieldsWidget = new QWidget();
+	bitFieldsWidget->setLayout(bitFieldsWidgetLayout);
+	VerticalScrollArea *scrollArea = new VerticalScrollArea();
+	scrollArea->setWidget(bitFieldsWidget);
+	layout->addWidget(scrollArea);
+
+	int currentBitFieldCount = 0;
+	int row = 0;
+	int col = 0;
 	for (int i = regModel->getBitFields()->size() - 1; i >= 0; --i) {
 		BitFieldDetailedWidget *bitFieldDetailedWidget = bitFieldDetailedWidgetFactory.buildWidget(regModel->getBitFields()->at(i));
-		bitFieldsWidgetLayout->addWidget(bitFieldDetailedWidget, bitFieldDetailedWidget->getWidth());
 		bitFieldList->push_back(bitFieldDetailedWidget);
 
+		bitFieldsWidgetLayout->addWidget(bitFieldDetailedWidget, row, col);
+		col++;
+		currentBitFieldCount += bitFieldDetailedWidget->getWidth();
+		if (currentBitFieldCount % 8 == 0) {
+			row++;
+			col = 0;
+		}
 		QObject::connect(bitFieldDetailedWidget, &BitFieldDetailedWidget::valueUpdated, this, [=](){
 			Q_EMIT bitFieldValueChanged(getBitFieldsValue());
 		});
@@ -44,14 +61,6 @@ void RegisterDetailedWidget::updateBitFieldsValue(uint32_t value)
 		int width = bitFieldList->at(i)->getWidth();
 		int bfVal = ( ((1 << (regOffset + width) ) - 1 ) & value) >> regOffset;
 		QString bitFieldValue =  QString::number(bfVal,16);
-		if (bitFieldValue.size() < width) {
-			QString aux = "";
-			while ( aux.size() < (width - bitFieldValue.size() )) {
-				aux += "0";
-
-			}
-			bitFieldValue = aux + bitFieldValue;
-		}
 		bitFieldList->at(i)->updateValue(bitFieldValue);
 		regOffset += width;
 
@@ -61,11 +70,13 @@ void RegisterDetailedWidget::updateBitFieldsValue(uint32_t value)
 
 QString RegisterDetailedWidget::getBitFieldsValue()
 {
-	QString val = "";
+	int result = 0;
 	for (int i = 0; i < bitFieldList->length(); ++i) {
-		val += bitFieldList->at(i)->getValue();
+		bool ok;
+		int aux = bitFieldList->at(i)->getValue().toInt(&ok,16);
+		int regOffset = bitFieldList->at(i)->getRegOffset();
+		result += qPow(2, regOffset) * aux;
+		qDebug() << "aux = " << aux << " result = " << result;
 	}
-	bool ok;
-
-	return QString::number(val.toInt(&ok,2),16);
+	return QString::number(result,16);;
 }

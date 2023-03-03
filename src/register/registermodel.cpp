@@ -1,4 +1,4 @@
-#include "bitfieldmodel.hpp"
+#include "bitfield/bitfieldmodel.hpp"
 #include "registermodel.hpp"
 
 RegisterModel::RegisterModel(QString name, uint32_t address, QString description, bool exists, int width, QString notes,

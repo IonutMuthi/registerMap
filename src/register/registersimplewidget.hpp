@@ -1,7 +1,9 @@
 #ifndef REGISTERSIMPLEWIDGET_HPP
 #define REGISTERSIMPLEWIDGET_HPP
 
+#include <QColor>
 #include <QWidget>
+#include <qstring.h>
 
 class QLabel;
 class BitFieldSimpleWidget;
@@ -14,6 +16,7 @@ public:
 				      QString address,
 				      QString description,
 				      QString notes,
+				      int registerWidth,
 				      QVector<BitFieldSimpleWidget*> *bitFields,
 				      QWidget *parent = nullptr);
 
@@ -25,6 +28,8 @@ private:
 	QHBoxLayout *layout;
 	QLabel *value;
 	QVector<BitFieldSimpleWidget*> *bitFields;
+	QMap<QString, QColor> *m_colors;
+	QColor getColor(QString description);
 	QString address;
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
