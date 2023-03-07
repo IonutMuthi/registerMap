@@ -15,10 +15,12 @@ void IIORegisterReadStrategy::read(uint32_t address)
 
 	ssize_t read = iio_device_reg_read(dev, address, &reg_val);
 	if (read < 0) {
-		qDebug(CAT_IIO_OPERATION) << "device read error " << read;
+		char err[1024];
+		iio_strerror(-(int)read, err, sizeof(err));
+		qDebug(CAT_IIO_OPERATION) << "device read error " << err;
 		Q_EMIT readError("device read error");
 	} else {
-		qDebug(CAT_IIO_OPERATION) << "device read success for " << address << " with value " <<reg_val;
+		qDebug(CAT_IIO_OPERATION) << "device read success for register " << address << " with value " <<reg_val;
 		Q_EMIT readDone(address,reg_val);
 	}
 }

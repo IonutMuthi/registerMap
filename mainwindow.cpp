@@ -26,27 +26,47 @@ MainWindow::MainWindow(QWidget *parent)
 		qDebug() << "Connection Error: No device available/connected to your PC.";
 	}
 
-	struct iio_device *dev = getIioDevice("ad9361-phy");
+	//	struct iio_device *dev = getIioDevice("ad9361-phy");
+
+	RegisterMapInstrument *regMapInstrument = new RegisterMapInstrument();
+
+	auto deviceCount = iio_context_get_devices_count(ctx);
+
+	for (int i = 0; i < deviceCount; i++) {
+		iio_device *dev = iio_context_get_device(ctx, i);
+		qDebug()<<"DEVICE FOUND " << iio_device_get_name(dev);
+		IIORegisterReadStrategy *iioReadStrategy = new IIORegisterReadStrategy(dev);
+		IIORegisterWriteStrategy *iioWriteStrategy = new IIORegisterWriteStrategy(dev);
+		RegisterMapValues *registerMapValues = new RegisterMapValues();
+		registerMapValues->setReadStrategy(iioReadStrategy);
+		registerMapValues->setWriteStrategy(iioWriteStrategy);
+
+		// if device has template
+		if (strcasecmp(iio_device_get_name(dev), "ad9361-phy") == 0) {
+
+			RegisterMapTemplate *registerMapTemplate = new RegisterMapTemplate();
+			XmlFileManager xmlFileManager(dev, "/home/ubuntu/Documents/RegisterMapDemo/ad9361-phy.xml");
+			registerMapTemplate->setRegisterList(xmlFileManager.getAllRegisters());
+			regMapInstrument->addTab( new DeviceRegisterMap(registerMapTemplate,registerMapValues), "ad9361");
+		} else {
+			regMapInstrument->addTab(dev, iio_device_get_name(dev));
+		}
 
 
-	IIORegisterReadStrategy *iioReadStrategy = new IIORegisterReadStrategy(dev);
-	IIORegisterWriteStrategy *iioWriteStrategy = new IIORegisterWriteStrategy(dev);
-	RegisterMapValues *registerMapValues = new RegisterMapValues();
-	registerMapValues->setReadStrategy(iioReadStrategy);
-	registerMapValues->setWriteStrategy(iioWriteStrategy);
+	}
+
+
+
 
 	//	FileRegisterReadStrategy *fileRegisterReadStrategy = new FileRegisterReadStrategy("/home/ubuntu/Documents/test.csv");
 	//	FileRegisterWriteStrategy *fileRegisterWriteStrategy = new FileRegisterWriteStrategy("/home/ubuntu/Documents/test.csv");
 	//	RegisterMapValues *registerMapValues = new RegisterMapValues(fileRegisterReadStrategy,fileRegisterWriteStrategy);
 
 
-	RegisterMapTemplate *registerMapTemplate = new RegisterMapTemplate();
 
-	XmlFileManager xmlFileManager(dev, "/home/ubuntu/Documents/RegisterMapDemo/ad9361-phy.xml");
-	registerMapTemplate->setRegisterList(xmlFileManager.getAllRegisters());
 
 	// each device register map will represent a tab
-	DeviceRegisterMap *devRegMap = new DeviceRegisterMap(registerMapTemplate,registerMapValues);
+//	DeviceRegisterMap *devRegMap = new DeviceRegisterMap(registerMapTemplate,registerMapValues);
 	//	DeviceRegisterMap *regMap = new DeviceRegisterMap(nullptr,registerMapValues);
 
 	//	QTabWidget *tabWidget = new QTabWidget;
@@ -55,12 +75,11 @@ MainWindow::MainWindow(QWidget *parent)
 	//	tabWidget->addTab(new DeviceRegisterMap(),"All null");
 	//	tabWidget->addTab(new DeviceRegisterMap(registerMapTemplate,nullptr), "template only");
 
-	RegisterMapInstrument *regMapInstrument = new RegisterMapInstrument();
 
-	regMapInstrument->addTab(devRegMap, "ad9361");
-	regMapInstrument->addTab(dev,"iio device");
-	regMapInstrument->addTab("/home/ubuntu/Documents/test.csv", "File strategy");
-	regMapInstrument->addTab(new DeviceRegisterMap(registerMapTemplate,nullptr), "template only");
+
+//	regMapInstrument->addTab(dev,"iio device");
+//	regMapInstrument->addTab("/home/ubuntu/Documents/test.csv", "File strategy");
+//	regMapInstrument->addTab(new DeviceRegisterMap(registerMapTemplate,nullptr), "template only");
 
 	QVBoxLayout *layout  = new QVBoxLayout();
 	layout->addWidget(regMapInstrument);
@@ -77,6 +96,7 @@ struct iio_device* MainWindow::getIioDevice(const char *dev_name){
 
 	for (int i = 0; i < deviceCount; i++) {
 		iio_device *dev = iio_context_get_device(ctx, i);
+		qDebug()<<"DEVICE FOUND " << iio_device_get_name(dev);
 		if (strcasecmp(iio_device_get_name(dev), dev_name) == 0) {
 			return dev;
 		}
