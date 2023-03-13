@@ -11,66 +11,67 @@
 #include <QScrollBar>
 #include <QDebug>
 #include <QGridLayout>
+#include <QtConcurrent/QtConcurrent>
+#include "logging_categories.h"
 
 RegisterMapTable::RegisterMapTable(QMap<uint32_t, RegisterModel *> *registerModels, QWidget *parent)
 	: registerModels(registerModels),
 	  QWidget{parent}
 {
-	layout = new QVBoxLayout();
-	setLayout(layout);
+	m_layout = new QVBoxLayout();
+	setLayout(m_layout);
 	setStyleSheet("border: 1px solid black");
-	scrollArea = new VerticalScrollArea();
-	scrollArea->setTabletTracking(true);
-	QObject::connect(scrollArea->verticalScrollBar(), &QAbstractSlider::valueChanged, this, [=](int value){
-		qDebug() << "SCROLL ";
-		if (value == scrollArea->verticalScrollBar()->minimum()) {
+	m_scrollArea = new VerticalScrollArea();
+	m_scrollArea->setTabletTracking(true);
+
+	QObject::connect(m_scrollArea->verticalScrollBar(), &QAbstractSlider::valueChanged, this, [=](int value){
+		if (value == m_scrollArea->verticalScrollBar()->minimum()) {
 			scrollUp();
 		}
-		if (value == scrollArea->verticalScrollBar()->maximum()){
+		if (value == m_scrollArea->verticalScrollBar()->maximum()){
 			scrollDown();
 		}
 	});
-	//	registerTableLayout = new QVBoxLayout();
-	registerTableLayout = new QGridLayout();
-	registerTable = new QWidget();
-	registerTable->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
-	registerTable->setLayout(registerTableLayout);
 
-
+	m_registerTableLayout = new QGridLayout();
+	m_registerTable = new QWidget();
+	m_registerTable->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+	m_registerTable->setLayout(m_registerTableLayout);
 
 	registersMap = new QMap<uint32_t, RegisterSimpleWidget*>();
-	filteredRegisterModels = registerModels;
-	populateMap();
-	scrollArea->setWidget(registerTable);
-	layout->addWidget(scrollArea);
 
-	QObject::connect(this, &RegisterMapTable::filteredMapGenerated, this, &RegisterMapTable::populateMap);
+	m_scrollArea->setWidget(m_registerTable);
+	m_layout->addWidget(m_scrollArea);
+
+	foreach (uint32_t key, registerModels->keys()) {
+		activeWidgets.push_back(key);
+	}
+	populateMap();
 }
 
 RegisterMapTable::~RegisterMapTable()
 {
-	delete layout;
-	delete scrollArea;
+	delete m_layout;
+	delete m_scrollArea;
 
 	delete registersMap;
 }
 
 void RegisterMapTable::valueUpdated(uint32_t address, uint32_t value)
 {
+	qDebug(CAT_REGISTER_MAP_TABLE) << "Update value for register at address " << address;
 	if (registersMap->contains(address)) {
 		registersMap->value(address)->valueUpdated(value);
 	} else {
-		//TODO ADD DEBUG MESSAGE " no register was found for address X "
+		qDebug(CAT_REGISTER_MAP_TABLE) << "No register was found for address " << address;
 	}
 }
 
 void RegisterMapTable::setFilters(QList<uint32_t> filters)
 {
-	this->filters = filters;
-	filterIterator= this->filters.begin();
-
+	qDebug(CAT_REGISTER_MAP_TABLE) << "Apply filters ";
 	hideAll();
-	filteredRegisterModels = applyFilter(filters);
+	activeWidgets = filters;
 	populateMap();
 }
 
@@ -84,101 +85,79 @@ void RegisterMapTable::hideAll()
 
 void RegisterMapTable::showAll()
 {
-	//TODO SHOW FIRST X ELEMENTS
 	QMap<uint32_t, RegisterSimpleWidget*>::iterator mapIterator;
 	for (mapIterator = registersMap->begin(); mapIterator != registersMap->end(); ++mapIterator) {
 		mapIterator.value()->show();
 	}
 }
 
+void RegisterMapTable::setMaxVisibleRows(int newMaxVisibleRows)
+{
+	m_maxVisibleRows = newMaxVisibleRows;
+}
+
 void RegisterMapTable::scrollDown()
 {
-	// delete first
-	// draw all row - 1
-	// add widget at bottom
-	qDebug() << "SCROLL DOWN";
-	if (bottomWidgetIterator != filteredRegisterModels->end()) {
-
-		registersMap->value(topWidgetIterator.key())->hide();
-
-		if (registersMap->contains(bottomWidgetIterator.key())) {
-			registersMap->value(bottomWidgetIterator.key())->show();
+	qDebug(CAT_REGISTER_MAP_TABLE) << "Scroll reached bottom";
+	if (activeWidgetBottom != activeWidgets.end()) {
+		registersMap->value(*activeWidgetTop)->hide();
+		if (registersMap->contains(*activeWidgetBottom)) {
+			registersMap->value(*activeWidgetBottom)->show();
 		}
 		else {
-			generateWidget(bottomWidgetIterator.value());
+			generateWidget(registerModels->value(*activeWidgetBottom));
 		}
 
 		// TODO optimize
-		scrollArea->verticalScrollBar()->setValue(scrollArea->verticalScrollBar()->maximum() - registersMap->value(bottomWidgetIterator.key())->sizeHint().height());
-		topWidgetIterator++;
-		bottomWidgetIterator++;
+		m_scrollArea->verticalScrollBar()->setValue(m_scrollArea->verticalScrollBar()->maximum() - registersMap->value(*activeWidgetBottom)->sizeHint().height());
+		activeWidgetTop++;
+		activeWidgetBottom++;
 	}
 }
 
 void RegisterMapTable::scrollUp()
 {
-	// delete last
-	// draw row +1
-	// add at top
-	qDebug() << "SCROLL UP";
-	if (topWidgetIterator != filteredRegisterModels->begin()) {
-
-		topWidgetIterator--;
-		bottomWidgetIterator--;
-
-		registersMap->value(bottomWidgetIterator.key())->hide();
-		if (registersMap->contains(topWidgetIterator.key())) {
-			registersMap->value(topWidgetIterator.key())->show();
+	qDebug(CAT_REGISTER_MAP_TABLE) << "Scroll reached top";
+	if (activeWidgetTop != activeWidgets.begin()) {
+		activeWidgetTop--;
+		activeWidgetBottom--;
+		registersMap->value(*activeWidgetBottom)->hide();
+		if (registersMap->contains(*activeWidgetTop)) {
+			registersMap->value(*activeWidgetTop)->show();
 		}
 		else {
-			generateWidget(topWidgetIterator.value());
+			generateWidget(registerModels->value(*activeWidgetTop));
 		}
-
 		// TODO optimize
-		scrollArea->verticalScrollBar()->setValue(scrollArea->verticalScrollBar()->minimum() + registersMap->value(topWidgetIterator.key())->sizeHint().height());
+		m_scrollArea->verticalScrollBar()->setValue(m_scrollArea->verticalScrollBar()->minimum() + registersMap->value(*activeWidgetTop)->sizeHint().height());
 	}
 }
 
 void RegisterMapTable::populateMap()
 {
-	QMap<uint32_t, RegisterModel *>::iterator mapIterator = filteredRegisterModels->begin();
+	QList<uint32_t>::iterator mapIterator = activeWidgets.begin();
 	int i = 0;
-	//	if (filters.isEmpty()) {
-	while ( i < MAX_ROW && mapIterator != filteredRegisterModels->end()) {
-		if (registersMap->contains(mapIterator.key())) {
-			registersMap->value(mapIterator.key())->show();
+	while ( i < m_maxVisibleRows && mapIterator != activeWidgets.end()) {
+		if (registersMap->contains(*mapIterator)) {
+			registersMap->value(*mapIterator)->show();
 		}
 		else {
-			generateWidget(mapIterator.value());
+			generateWidget(registerModels->value(*mapIterator));
 		}
 		++mapIterator;
 		++i;
 	}
-	currentRowCount = i;
-	bottomWidgetIterator = mapIterator;
-	topWidgetIterator = filteredRegisterModels->begin();
+	activeWidgetBottom = mapIterator;
+	activeWidgetTop = activeWidgets.begin();
 
-	//	}
 }
 
 void RegisterMapTable::generateWidget(RegisterModel *model)
 {
+	qDebug(CAT_REGISTER_MAP_TABLE) << "Generate new widget";
 	RegisterSimpleWidgetFactory registerSimpleWidgetFactory;
 	RegisterSimpleWidget *registerSimpleWidget = registerSimpleWidgetFactory.buildWidget(model);
 	QObject::connect(registerSimpleWidget, &RegisterSimpleWidget::registerSelected, this, &RegisterMapTable::registerSelected);
 	registersMap->insert(model->getAddress(), registerSimpleWidget);
-	registerTableLayout->addWidget(registerSimpleWidget,currentRowCount,0);
-	++currentRowCount;
-}
-
-QMap<uint32_t, RegisterModel*>* RegisterMapTable::applyFilter(QList<uint32_t> filters)
-{
-	QMap<uint32_t, RegisterModel*> *filteredRegisterModels = new QMap<uint32_t, RegisterModel*>();
-
-	foreach (uint32_t address, filters) {
-		filteredRegisterModels->insert(address,registerModels->value(address));
-	}
-
-	return filteredRegisterModels;
-
+	m_registerTableLayout->addWidget(registerSimpleWidget,model->getAddress(),0);
 }

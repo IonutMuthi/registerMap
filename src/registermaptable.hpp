@@ -24,30 +24,29 @@ public:
 	void setFilters(QList<uint32_t> filters);
 	void hideAll();
 	void showAll();
+
+	void setMaxVisibleRows(int newMaxVisibleRows);
+
 Q_SIGNALS:
 	void registerSelected(uint32_t address);
-	void filteredMapGenerated(QMap<uint32_t, RegisterModel*> *registersMap);
 
 private:
-	QList<uint32_t> filters;
-	QList<uint32_t>::iterator filterIterator;
-	const int  MAX_ROW = 10;
-	QVBoxLayout *layout;
-	VerticalScrollArea  *scrollArea;
-//	QVBoxLayout *registerTableLayout;
-	QGridLayout *registerTableLayout;
-	QWidget *registerTable;
+
+	int  m_maxVisibleRows = 10;
+	QVBoxLayout *m_layout;
+	QGridLayout *m_registerTableLayout;
+	VerticalScrollArea  *m_scrollArea;
+	QWidget *m_registerTable;
 	QMap<uint32_t, RegisterModel *> *registerModels;
-	QMap<uint32_t, RegisterModel *> *filteredRegisterModels;
+
+	QList<uint32_t> activeWidgets;
+	QList<uint32_t>::iterator activeWidgetTop;
+	QList<uint32_t>::iterator activeWidgetBottom;
+
 	void scrollDown();
 	void scrollUp();
-	int currentRowCount;
-	QMap<uint32_t, RegisterModel *>::iterator bottomWidgetIterator;
-	QMap<uint32_t, RegisterModel *>::iterator topWidgetIterator;
 	void populateMap();
-
 	void generateWidget(RegisterModel *model);
-	QMap<uint32_t, RegisterModel *> *applyFilter(QList<uint32_t> filters);
 };
 
 #endif // REGISTERMAPTABLE_HPP
