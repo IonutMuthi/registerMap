@@ -2506,7 +2506,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{20d28624-7a96-4679-985f-3ab0c230b01a}</uid>
+                    <uid>{25304f69-3ab7-46a2-a4fe-9a62d28c7428}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void registerChanged(RegisterModel *regModel, uint32_t value)</declaration>
@@ -2514,7 +2514,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{072c6215-27c9-4d8c-8a15-b88931821cf4}</uid>
+                    <uid>{da876c91-ab3b-4104-b2e0-dae7a156516c}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void registerValueChanged(QString value)</declaration>
@@ -2522,7 +2522,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3b1c2390-049d-45fc-9a1f-d436369ce978}</uid>
+                    <uid>{ad476939-ed45-43d4-85e9-58643255d960}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>void setAddressRange(QList&lt;uint32_t&gt; val)</declaration>
@@ -2530,7 +2530,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{97493e3f-4bc5-4d87-9d10-74141d1b5c0e}</uid>
+                    <uid>{32404073-09db-4152-a94b-64d5c0a6d062}</uid>
                     <visibility>4</visibility>
                     <type>2</type>
                     <declaration>void requestRead(uint32_t address)</declaration>
@@ -2538,7 +2538,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5db96d54-eb2a-4175-8f32-97f91321c103}</uid>
+                    <uid>{41ae88fc-7916-465d-b033-bebe45dffc3a}</uid>
                     <visibility>4</visibility>
                     <type>2</type>
                     <declaration>void requestWrite(uint32_t address, uint32_t value)</declaration>
@@ -2546,7 +2546,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{04fc7e60-cbc3-40ef-82c4-014687daa663}</uid>
+                    <uid>{c2de5576-e17c-4bdc-b9d1-4f4532d7215c}</uid>
                     <visibility>4</visibility>
                     <type>2</type>
                     <declaration>void registerAddressChanged(uint32_t address)</declaration>
@@ -2554,7 +2554,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{933a42c0-dad4-4509-b3ca-e108b6874710}</uid>
+                    <uid>{5defd484-466b-40d9-a547-8282ab7b9483}</uid>
                     <visibility>4</visibility>
                     <type>2</type>
                     <declaration>void valueChanged(QString value)</declaration>
